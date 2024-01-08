@@ -1,0 +1,17 @@
+{
+    "name": "Time Table CSEA Sem6",
+    "short_name": "Time Table",
+    "author":"Abhinav R",
+    "start_url": "index.html",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "icon": [
+        {
+            "src": "./timetable.png",
+            "sizes": "511x511",
+            "type": "image/png"
+        }
+    ],
+    "purpose": "any"
+}
+
