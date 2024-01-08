@@ -4,6 +4,7 @@ const assets = [
   "/index.html",
   "/manifest.json",
   "/timetable.png",
+  "/app.js"
 ]
 
 self.addEventListener("install", installEvent => {
