@@ -3,9 +3,10 @@
     "short_name": "Time Table",
     "author":"Abhinav R",
     "start_url": "index.html",
+    "display_override": ["fullscreen", "minimal-ui"],
     "display": "standalone",
     "orientation": "portrait-primary",
-    "icon": [
+    "icons": [
         {
             "src": "./timetable.png",
             "sizes": "511x511",
