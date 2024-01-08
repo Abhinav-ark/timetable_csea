@@ -2,7 +2,7 @@
     "name": "Time Table CSEA Sem6",
     "short_name": "Time Table",
     "author":"Abhinav R",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display_override": ["fullscreen", "minimal-ui"],
     "display": "standalone",
     "orientation": "portrait-primary",
