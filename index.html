@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        thead {
+            background-color: rgb(54, 213, 78);
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+        }
+
+        span {
+            font-weight: 500;
+        }
+
+        .yellow {
+            background-color: rgb(255, 238, 0);
+        }
+
+        .interval {
+            background-color: rgb(68, 152, 255);   
+        }
+
+        .interval p {
+            width: 100%;
+            /*transform: rotate(-90deg);*/
+        }
+
+        .grey {
+            background-color: rgb(236, 234, 234);
+        }
+
+        .cir {
+            background-color: rgb(243, 62, 150);
+        }
+
+        .pe2 {
+            background-color: rgb(150, 77, 215);
+        }
+
+        .pe3 {
+            background-color: rgb(244, 146, 65);
+        }
+
+        .lab{
+            background-color: antiquewhite;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                transform: rotate(-90deg);
+            }
+        }
+    </style>
+    <title>Centered Table</title>
+</head>
+<body>
+
+    <table>
+        <thead><tr><th colspan="12">CSEA Sem 6 TimeTable</th></tr></thead>
+        <tbody>
+            <tr>
+                <th class="yellow">Time/Day</th>
+                <th class="grey">Slot 1 <br> <span>8:00am - 8:50am</span> </th>
+                <th class="grey">Slot 2 <br> <span>8:50am - 9:40am</span> </th>
+                <th class="grey">Slot 3 <br> <span>9:40am - 10:30am</span> </th>
+                <th class="interval" rowspan="10"><p>10:30am - 10:45am <br> <br> Interval Break</p></th>
+                <th class="grey">Slot 4 <br> <span>10:45am - 11:35am</span> </th>
+                <th class="grey">Slot 5 <br> <span>11:35am - 12:25pm</span> </th>
+                <th class="grey">Slot 6 <br> <span>12:15pm - 1:15pm</span> </th>
+                <th class="grey">Slot 7 <br> <span>1:15pm - 2:05pm</span></th>
+                <th class="grey">Slot 8 <br> <span>2:05pm - 2:55pm</span></th>
+                <th class="grey">Slot 9 <br> <span>2:55pm - 3:45pm</span></th>
+                <th class="grey">Slot 10 <br> <span>3:45pm - 4:35pm</span> </th>
+            </tr>
+            <tr>
+                <th class="yellow">Monday</th>
+                <td></td>
+                <td></td>
+                <td>19CSE313</td>
+                <td>19CSE312</td>
+                <td></td>
+                <td></td>
+                <td class="cir" colspan="3">CIR</td>
+                <td>Mentoring</td>
+            </tr>
+            <tr>
+                <th class="yellow">Tuesday</th>
+                <td></td>
+                <td></td>
+                <td>19CSE313</td>
+                <td>19CSE314</td>
+                <td class="pe2">PE2</td>
+                <td class="pe3">PE3</td>
+                <td></td>
+                <td class="lab" colspan="3">19CSE313-Lab</td>
+            </tr>
+            <tr>
+                <th class="yellow">Wednesday</th>
+                <td></td>
+                <td></td>
+                <td>19CSE314</td>
+                <td>19CSE312</td>
+                <td class="pe3">PE3</td>
+                <td>19CSE311</td>
+                <td></td>
+                <td class="lab" colspan="3">19CSE312-Lab</td>
+            </tr>
+            <tr>
+                <th class="yellow">Thursday</th>
+                <td></td>
+                <td>19CSE311</td>
+                <td class="lab" >19CSE314 - Lab</td>
+                <td class="lab" colspan="2">19CSE314 - Lab</td>
+                <td></td>
+                <td>19CSE312</td>
+                <td class="pe2">PE2</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="yellow">Friday</th>
+                <td class="pe2">PE2</td>
+                <td></td>
+                <td></td>
+                <td>19CSE311</td>
+                <td class="pe3">PE3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
