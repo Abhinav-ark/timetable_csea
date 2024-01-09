@@ -80,7 +80,7 @@
 <body>
     <div>
     <table>
-        <thead><tr><th colspan="12">CSEA Sem 6 TimeTable</th></tr></thead>
+        <thead><tr><th colspan="12">CSE A Sem 6 TimeTable</th></tr></thead>
         <tbody>
             <tr>
                 <th class="yellow">Time/Day</th>
@@ -158,17 +158,40 @@
     </table>
     <br>
     <table>
-        <tr>
-            <th>19CSE311 Computer Security</th>
-            <th>19CSE312 Distributed Systems</th>
-            <th>19CSE313 Principles of Programming Languages</th>
-            <th>19CSE314 Software Engineering</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>19CSE311 Computer Security</th>
+                <th>19CSE312 Distributed Systems</th>
+                <th>19CSE313 Principles of Programming Languages</th>
+                <th>19CSE314 Software Engineering</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dr. Harini N</td>
+                <td>Dr. Shunmugapriya M C</td>
+                <td>Dr. Swapna T R</td>
+                <td>Dr. Radhika N</td>
+            </tr>
+            <tr>
+                <td>A303</td>
+                <td>A303</td>
+                <td>A303</td>
+                <td id="#dynamic_venue">A303</td>
+            </tr>
+        </tbody>
     </table>
     </div>
     
     <script src="./app.js"></script>
     <script src="./serviceWorker.js"></script>
+    <script type="text/javascript">
+        // March 18th 2024, Expected MidTerm Date. As the Software Engineering class will be shifted to anugraha hall at that time, the following code will automatically update the venue to anugraha hall after March 18th 2024.
+
+        if (new Date().toISOString().slice(0, 10) > "2024-03-18") {
+            document.getElementById("#dynamic_venue").innerHTML = "Anugraha Hall (Combined with D section)";
+        }
+    </script>
     <!-- Icon attribution
     <a href="https://www.flaticon.com/free-icons/calendar" title="calendar icons">Calendar icons created by Freepik - Flaticon</a> -->
 </body>
