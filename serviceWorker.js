@@ -1,10 +1,10 @@
 const cacheName = 'v1';
 
 const cacheAssets = [
-    './timetable_csea/index.html',
-    './timetable_csea/app.js',
-    './timetable_csea/manifest.json',
-    './timetable_csea/timetable.png'
+    './index.html',
+    './app.js',
+    './manifest.json',
+    './timetable.png'
 ];
 
 //Call install event
