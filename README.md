@@ -1,4 +1,4 @@
-# Timetable for 6th Semester 2023-24 B Tech CSE A
+# Timetable for 6th Semester 2023-24 B.Tech CSE A
 
 - Simple PWA to display timetable for 6th Semester 2023-24 B Tech CSE A.
 - Built with
