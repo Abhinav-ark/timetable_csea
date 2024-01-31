@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./timetable.png" type="image/x-icon" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./timetable.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Timetable CSEA Sem6</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            max-height: 100%;
+            margin: 0;
+        }
+
+        table{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-radius: 10px;
+            height: fit-content;
+            width: fit-content;
+            max-width: 90vw;
+        }
+
+        thead{
+            background-color: rgb(7, 2, 2);
+            color: white;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+        }
+
+        .date {
+            min-width: 5rem;
+        }
+
+        .toggle-wrapper a{
+            text-decoration:none;
+            display: grid;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle {
+            /* border: 1px solid green; */
+            display: grid;
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 5px;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle span{
+            /* border: 1px solid blue; */
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle-wrapper a :active{
+            text-decoration:none;
+        }
+        .toggle-wrapper a :visited{
+            text-decoration:none;
+        }
+        .toggle-wrapper a :hover{
+            text-decoration:none;
+        }
+
+        .toggle-wrapper{
+            background-color: black;
+            /* border: 1px solid red; */
+            display: grid;
+            border-radius: 10px;
+            position: fixed;
+            padding: 5px;
+            bottom: 0;
+            right: 0;
+            margin: 30px;
+            z-index: 100;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle-wrapper :hover{
+            transform: scale(1.1);
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            color: white;
+            font-size: 2rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .toggle-wrapper{
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <th>Due On</th>
+                <th>Assignment</th>
+            </thead>
+            <tr>
+                <td class="date">01-02-2024</td>
+                <td>19CSE314 (SE) Story Writing,<br> previous lab feasibility report</td>
+            </tr>
+            <tr>
+                <td class="date">01-02-2024</td>
+                <td>19CSE311 (CS) Harini mam gave 2Qs in class</td>
+            </tr>
+            <tr>
+                <td class="date">06-02-2024</td>
+                <td>19CSE312 (DS) Tutorial</td>
+            </tr>
+            <tr>
+                <td class="date">Not Known</td>
+                <td>Mock Interview Starts</td>
+            </tr>
+        </table>
+    </div>
+    <div class="toggle-wrapper" aria-label="upcoming tasks">
+        <a href="./index.html">
+            <div class="toggle">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
