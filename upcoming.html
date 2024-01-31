@@ -126,9 +126,15 @@
                 <th>Due On</th>
                 <th>Assignment</th>
             </thead>
-            <tr>
+            <template id="task-template">
+                <tr>
+                    <td class="date"></td>
+                    <td></td>
+                </tr>
+            </template>
+            <!-- <tr>
                 <td class="date">01-02-2024</td>
-                <td>19CSE314 (SE) Story Writing,<br> previous lab feasibility report</td>
+                <td>19CSE314 (SE) Story Writing, previous lab feasibility report</td>
             </tr>
             <tr>
                 <td class="date">01-02-2024</td>
@@ -141,7 +147,7 @@
             <tr>
                 <td class="date">Not Known</td>
                 <td>Mock Interview Starts</td>
-            </tr>
+            </tr> -->
         </table>
     </div>
     <div class="toggle-wrapper" aria-label="upcoming tasks">
@@ -153,5 +159,18 @@
             </div>
         </a>
     </div>
+    <script type="module">
+        import tasks from './assignments.json' assert { type: 'json' };
+        //console.log(tasks);
+
+        let tasktemplate = document.getElementById("task-template");
+        
+        tasks.forEach(task => {
+            let taskelement = tasktemplate.content.cloneNode(true);
+            taskelement.querySelector('.date').innerHTML=task.due;
+            taskelement.querySelector('td:nth-child(2)').innerHTML=task.task;
+            document.querySelector('table').appendChild(taskelement);
+        })
+    </script>
 </body>
 </html>
