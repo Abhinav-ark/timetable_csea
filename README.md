@@ -10,7 +10,7 @@
 
 - [x] Time Table with Course Code and Slots.
 - [x] Responsive Design.
-- [x] PWA (Can be installed on Android and Desktop).
+- [x] PWA (Can be installed on Android, iPhone and Desktop).
 - [x] Dynamic Venue based on Day and Time.
 
 ## Contributors
