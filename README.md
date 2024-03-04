@@ -13,6 +13,8 @@
 - [x] PWA (Can be installed on Android, iPhone and Desktop).
 - [x] Dynamic Venue based on Day and Time.
 
+[Install App](https://abhinav-ark.github.io/timetable_csea/)
+
 ## Contributors
 
 - `Abhinav Ramakrishnan`
