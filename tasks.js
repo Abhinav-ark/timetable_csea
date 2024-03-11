@@ -11,10 +11,6 @@ const tasks =
         "task":"POPL Quiz-1"
     },
     
-    {
-        "due":"March 11th to 15th",
-        "task":"DS CS Review-1"
-    },
 
     {
         "due":"March 12th",
@@ -24,6 +20,11 @@ const tasks =
     {
         "due":"March 13th",
         "task":"CS Tutorial-1"
+    },
+
+    {
+        "due":"March 15th",
+        "task":"DS CS Review-1"
     },
 
     {
