@@ -17,6 +17,11 @@ const tasks =
     },
 
     {
+        "due":"March 25th-28th",
+        "task":"SE Review-2(15)"
+    },
+
+    {
         "due":"Starting April 1st",
         "task":"CIR Verbal Speech"
     },
@@ -44,6 +49,11 @@ const tasks =
     {
         "due":"April 24th",
         "task":"DS Tutorial-2(9)"
+    },
+
+    {
+        "due":"May 6th-10th",
+        "task":"SE Review-3(20)"
     },
 
     {
