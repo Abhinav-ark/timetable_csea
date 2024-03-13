@@ -2,12 +2,7 @@ const tasks =
 [
 
     {
-        "due":"March 13th",
-        "task":"CS Tutorial-1(10)"
-    },
-
-    {
-        "due":"March 13th onwards",
+        "due":"March 13th-15th",
         "task":"DS CS Review-1(10)"
     },
 
@@ -17,13 +12,13 @@ const tasks =
     },
 
     {
-        "due":"March 25th-28th",
-        "task":"SE Review-2(15)"
+        "due":"Starting April 1st",
+        "task":"CIR Verbal Speech"
     },
 
     {
-        "due":"Starting April 1st",
-        "task":"CIR Verbal Speech"
+        "due":"April 11th",
+        "task":"SE Review-2(15)"
     },
 
     {
