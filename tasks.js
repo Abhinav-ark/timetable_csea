@@ -1,24 +1,29 @@
 const tasks = 
 [
+    {
+        "due":"March 18th",
+        "task":"CS MidTerm Exam(20)"
+    },
+    
 
     {
-        "due":"March 13th-15th",
-        "task":"DS CS Review-1(10)"
+        "due":"March 19th",
+        "task":"POPL MidTerm Exam(20)"
     },
 
     {
-        "due":"March 15th",
-        "task":"CIR Mock Interview (Batch-2)"
+        "due":"March 20th",
+        "task":"DS MidTerm Exam(20)"
+    },
+    
+    {
+        "due":"March 26th",
+        "task":"SE MidTerm Exam(20)"
     },
 
     {
-        "due":"Starting April 1st",
-        "task":"CIR Verbal Speech"
-    },
-
-    {
-        "due":"April 11th",
-        "task":"SE Review-2(15)"
+        "due":"------",
+        "task":"------"
     },
 
     {
@@ -48,7 +53,7 @@ const tasks =
 
     {
         "due":"May 6th-10th",
-        "task":"SE Review-3(20)"
+        "task":"SE Review-2(20)"
     },
 
     {
