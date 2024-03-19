@@ -1,23 +1,23 @@
 const tasks = 
 [
     {
-        "due":"March 18th",
+        "due":"------",
         "task":"CS MidTerm Exam(20)"
     },
     
 
     {
-        "due":"March 19th",
+        "due":"------",
         "task":"POPL MidTerm Exam(20)"
     },
 
     {
-        "due":"March 20th",
+        "due":"------",
         "task":"DS MidTerm Exam(20)"
     },
     
     {
-        "due":"March 26th",
+        "due":"------",
         "task":"SE MidTerm Exam(20)"
     },
 
