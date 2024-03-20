@@ -42,7 +42,7 @@ const tasks =
     },
 
     {
-        "due":"April 19th",
+        "due":"April 17th",
         "task":"SE Quiz-2(5)"
     },
 
