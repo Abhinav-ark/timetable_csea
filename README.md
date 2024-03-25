@@ -19,3 +19,4 @@
 
 - `Abhinav Ramakrishnan`
 - `Ashwin Narayanan S`
+- `Hariharan A`
