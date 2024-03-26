@@ -23,7 +23,9 @@
 <br>
 <br>
 
-
+# Steps to Download Exam Timetable
+<img align="center" src="./Assets/schedule_download_steps.png"/>
+<br>
 
 
 ## Features
