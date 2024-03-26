@@ -1,5 +1,10 @@
 const tasks = 
 [
+    
+    {
+        "due":"March 27th",
+        "task":"DS Quiz[viva component](2)"
+    },
 
     {
         "due":"April 16th",
@@ -7,7 +12,7 @@ const tasks =
     },
 
     {
-        "due":"April 16th",
+        "due":"April 30th",
         "task":"POPL Lab Eval-2(15)"
     },
 
