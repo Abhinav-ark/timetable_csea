@@ -111,20 +111,28 @@
             /* border: 1px solid red; */
             display: grid;
             border-radius: 10px;
-            position: fixed;
             padding: 5px;
-            bottom: 0;
-            right: 0;
-            margin: 30px;
-            z-index: 100;
             width: fit-content;
             height: fit-content;
             max-height: 3rem;
             max-width: 3rem;
+            margin-right: 10px;
         }
         .toggle-wrapper :hover{
             transform: scale(1.1);
             transition: all 0.2s ease-in-out;
+        }
+
+        .linkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 30px;
+            z-index: 100;
         }
         
         .material-symbols-outlined {
@@ -141,8 +149,11 @@
             .timetable {
                 transform: rotate(-90deg) scale(0.8);
             }
-            .toggle-wrapper{
+            .linkbox{
                 margin: 10px;
+            }
+            .toggle-wrapper{
+                margin-right: 5px;
             }
         }
     </style>
@@ -209,13 +220,13 @@
                 <td></td>
                 <td>19CSE312</td>
                 <td class="pe2">PE2</td>
-                <td></td>
-                <td></td>
+                <td class="pe2">PE2</td>
+                <td class="lab">CPS - Lab</td>
             </tr>
             <tr>
                 <th class="yellow">Friday</th>
+                <td></td>
                 <td class="pe2">PE2</td>
-                <td>Crypto Group-1</td>
                 <td></td>
                 <td>19CSE311</td>
                 <td class="pe3">PE3</td>
@@ -253,14 +264,25 @@
         </tbody>
     </table>
     </div>
-    <div class="toggle-wrapper" aria-label="upcoming tasks">
-        <a href="./upcoming.html">
-            <div class="toggle">
-                <span class="material-symbols-outlined">
-                    pending_actions
-                </span>
-            </div>
-        </a>
+    <div class="linkbox">
+        <div class="toggle-wrapper" aria-label="upcoming tasks">
+            <a href="./upcoming.html">
+                <div class="toggle">
+                    <span class="material-symbols-outlined">
+                        pending_actions
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="toggle-wrapper" aria-label="midterm schedule">
+            <a href="./Assets/midterm.pdf">
+                <div class="toggle">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>
+                </div>
+            </a>
+        </div>
     </div>
     
     <script src="./app.js"></script>
@@ -268,7 +290,7 @@
         // March 18th 2024, Expected MidTerm Date. As the Software Engineering class will be shifted to anugraha hall at that time, the following code will automatically update the venue to anugraha hall after March 18th 2024.
 
         if (new Date().toISOString().slice(0, 10) > "2024-03-18") {
-            document.getElementById("#dynamic_venue").innerHTML = "Anugraha Hall (Combined with D section)";
+            document.getElementById("#dynamic_venue").innerHTML = "Anugraha Hall";
         }
     </script>
     <!-- Icon attribution

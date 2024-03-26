@@ -1,6 +1,5 @@
 const tasks = 
 [
-    
     {
         "due":"March 27th",
         "task":"DS Quiz[viva component](2)"
