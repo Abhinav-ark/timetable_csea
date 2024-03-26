@@ -1,34 +1,13 @@
 const tasks = 
 [
     {
-        "due":"April 12th",
-        "task":"CS MidTerm Exam(20)"
-    },
-    
-
-    {
-        "due":"April 13th",
-        "task":"POPL MidTerm Exam(20)"
-    },
-
-    {
-        "due":"April 15th",
-        "task":"DS MidTerm Exam(20)"
-    },
-    
-    {
-        "due":"April 17th",
-        "task":"SE MidTerm Exam(20)"
+        "due":"March 27th",
+        "task":"DS Quiz[viva component](2)"
     },
 
     {
         "due":"April 16th",
         "task":"DS Lab Eval-1(10)"
-    },
-
-    {
-        "due":"April 16th",
-        "task":"POPL Lab Eval-2(15)"
     },
 
     {
@@ -44,6 +23,11 @@ const tasks =
     {
         "due":"April 24th",
         "task":"DS Tutorial-2(9)"
+    },
+
+    {
+        "due":"April 30th",
+        "task":"POPL Lab Eval-2(15)"
     },
 
     {
