@@ -1,4 +1,4 @@
-# Timetable for 6th Semester 2023-24 B.Tech CSE A
+# Timetable B.Tech CSE A Progressive Web App
 
 <img align="center" src="./Assets/img.png"/>
 
