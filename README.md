@@ -44,3 +44,11 @@
 <br>
 
 > If You Want to suggest a change in tasks you can either raise an Issue (or) fork the repository, commit changes and create a Pull Request.
+
+# Attributions
+- `App Icon`: Calendar icons created by Freepik - Flaticon
+- `PDF Viewer`: [PDF.js](https://github.com/mozilla/pdf.js) by Mozilla Foundation Under [Apache-2.0 License](https://github.com/mozilla/pdf.js/blob/master/LICENSE)
+
+# Licensing
+- All Code In [`./Assets/pdfjs-4.0.379-dist`](./Assets/pdfjs-4.0.379-dist) Directory is Licensed Under [Apache-2.0 License](https://github.com/mozilla/pdf.js/blob/master/LICENSE), [MOZIILA'S CODE OF CONDUCT](https://github.com/mozilla/pdf.js/blob/master/CODE_OF_CONDUCT.md)
+- All Code Except [Assets](./Assets) Directory is Licensed Under [MIT License](https://github.com/Abhinav-ark/timetable_csea/blob/main/LICENSE)
