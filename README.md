@@ -45,7 +45,7 @@
 
 <br>
 
-> If You Want to suggest a change in tasks you can either raise an Issue (or) fork the repository, commit changes and create a Pull Request.
+> ❗If You Want to suggest a change in tasks you can either raise an Issue (or) fork the repository, commit changes and create a Pull Request.
 
 # Attributions
 - `App Icon`: Calendar icons created by Freepik - Flaticon
