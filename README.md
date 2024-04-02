@@ -7,6 +7,13 @@
     - `HTML5`
     - `CSS3`
     - `JavaScript`
+ 
+## Features
+
+- [x] Time Table with Course Code and Slots.
+- [x] Tasks Table and Exam Schedule PDF Reader.
+- [x] Responsive Design.
+- [x] PWA (Can be installed on Android, iPhone and Desktop).
 
 <br>
 <br>
@@ -27,13 +34,8 @@
 <img align="center" src="./Assets/schedule_download_steps.png"/>
 <br>
 
-
-## Features
-
-- [x] Time Table with Course Code and Slots.
-- [x] Tasks Table and Exam Schedule PDF Reader.
-- [x] Responsive Design.
-- [x] PWA (Can be installed on Android, iPhone and Desktop).
+# Motivation 
+  Our classmates used to change the class whatsApp group's DP to a screenshot of the timetable to keep track of it on a regular basis. One day when I was trying to update the classgroup's DP to the new timetable, the quality of the image was unusable (text not readable) due to whatsApp's compression algorithms. I created a static HTML page of the timetable and added a manifest.json, hosted it on GitHub pages and updated it in the class group's description that evening. That simple pwa evolved into the one available today.  
 
 ## Contributors
 
