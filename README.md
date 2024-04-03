@@ -1,4 +1,7 @@
 # Timetable B.Tech CSE A Progressive Web App
+<a href="https://visitcount.itsvg.in">
+  <img align='center' src="https://visitcount.itsvg.in/api?id=timetable-csea&label=Total%20Views&color=12&icon=5&pretty=false" />
+</a>
 
 <img align="center" src="./Assets/img.png"/>
 
