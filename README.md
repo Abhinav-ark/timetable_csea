@@ -1,8 +1,8 @@
 # Timetable B.Tech CSE A Progressive Web App
 <div style="display:flex; align-items: center; justify: center; text-decoration: none ">
-<a href="https://visitcount.itsvg.in">
+<!-- <a href="https://visitcount.itsvg.in">
   <img align='center' src="https://visitcount.itsvg.in/api?id=timetable-csea&label=Total%20Views&color=12&icon=5&pretty=false" />
-</a>
+</a> -->
 <a href="https://github.com/Abhinav-ark/timetable_csea/actions/workflows/pages/pages-build-deployment" target="_blank" rel="noreferrer">
   <img align='center' src="https://github.com/Abhinav-ark/timetable_csea/actions/workflows/pages/pages-build-deployment/badge.svg"/>
 </a>
