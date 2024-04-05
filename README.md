@@ -45,6 +45,8 @@
 
 # Steps to Download Exam Timetable
 <img align="center" src="./Assets/schedule_download_steps.png"/>
+
+> ❗Both Midterm and EndSem Timetables Added in Latest Update, Choose your Preference after pressing the Exam Schedule icon.
 <br>
 
 # Motivation 
