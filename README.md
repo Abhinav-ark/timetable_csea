@@ -45,6 +45,9 @@
 
 # Steps to Download Exam Timetable
 <img align="center" src="./Assets/schedule_download_steps.png"/>
+
+> [!Note]
+> Both Midterm and EndSem Timetables Added in Latest Update, Choose your Preference after pressing the Exam Schedule icon.
 <br>
 
 # Motivation 
@@ -58,7 +61,8 @@
 
 <br>
 
-> ❗If You Want to suggest a change in tasks you can either raise an Issue (or) fork the repository, commit changes and create a Pull Request.
+> [!Note]
+> If You Want to suggest a change in tasks you can either raise an Issue (or) fork the repository, commit changes and create a Pull Request.
 
 # Attributions
 - `App Icon`: Calendar icons created by Freepik - Flaticon
