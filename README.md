@@ -33,7 +33,15 @@
 
 # Installation Steps
 
+## Mobile
 <img align="center" src="./Assets/installation_steps.png"/>
+
+<div align="center" style="font-size:30px" >
+    <a href="https://abhinav-ark.github.io/timetable_csea/">Install App</a>
+</div>
+
+## Desktop
+<img align="center" src="./Assets/install_desktop.png"/>
 <br>
 
 <div align="center" style="font-size:30px" >
