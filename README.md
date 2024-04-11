@@ -29,9 +29,11 @@
 - [x] PWA (Can be installed on Android, iPhone and Desktop).
 <br>
 <br>
-<div align="center" style="font-size:30px" >
+
+<div align="center" style="font-size:30px;" >
     <a href="https://abhinav-ark.github.io/timetable_csea/">Install App</a>
 </div>
+
 <br>
 
 # Installation Steps
@@ -48,6 +50,10 @@ Open The App Link in Safari Browser.
 Google Chrome, Microsoft Edge, Brave and Opera Support PWA.
 <img align="center" src="./Assets/install_desktop.png"/>
 <br>
+
+<div align="center">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing">Read More about installing PWA on MDN docs.</a>
+</div>
 
 <br>
 <br>
