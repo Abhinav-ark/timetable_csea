@@ -27,26 +27,27 @@
 - [x] Tasks Table and Exam Schedule PDF Reader.
 - [x] Responsive Design.
 - [x] PWA (Can be installed on Android, iPhone and Desktop).
-
 <br>
+<br>
+<div align="center" style="font-size:30px" >
+    <a href="https://abhinav-ark.github.io/timetable_csea/">Install App</a>
+</div>
 <br>
 
 # Installation Steps
 
-## Mobile
+## Android
+Open The App Link in Chrome Browser.
 <img align="center" src="./Assets/installation_steps.png"/>
 
-<div align="center" style="font-size:30px" >
-    <a href="https://abhinav-ark.github.io/timetable_csea/">Install App</a>
-</div>
+## IOS
+Open The App Link in Safari Browser.
+<img align="center" src="./Assets/install_ios.png"/>
 
-## Desktop
+## Desktop 
+Google Chrome, Microsoft Edge, Brave and Opera Support PWA.
 <img align="center" src="./Assets/install_desktop.png"/>
 <br>
-
-<div align="center" style="font-size:30px" >
-    <a href="https://abhinav-ark.github.io/timetable_csea/">Install App</a>
-</div>
 
 <br>
 <br>
