@@ -51,9 +51,9 @@ Google Chrome, Microsoft Edge, Brave and Opera Support PWA.
 <img align="center" src="./Assets/install_desktop.png"/>
 <br>
 
-<div align="center">
-    <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing">Read More about installing PWA on MDN docs.</a>
-</div>
+> [!Tip]
+> Read More about installing PWAs on <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing"> MDN docs</a>.
+
 
 <br>
 <br>
