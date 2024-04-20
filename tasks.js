@@ -7,14 +7,21 @@ const tasks =
         "task":"SE Quiz-2(5)"
     },
 
-    {
-        "due":"April 30th",
-        "task":"POPL Lab Eval-2(15)"
-    },
+    
 
     {
         "due":"May 1st (Tentative)",
         "task":"DS Lab Eval-1(10)"
+    },
+
+    {
+        "due":"May 1st",
+        "task":"POPL Scala Assignment"
+    },
+
+    {
+        "due":"May 3rd / May 14th",
+        "task":"POPL Lab Eval-2(15)"
     },
     
     {
@@ -38,7 +45,7 @@ const tasks =
     },
 
     {
-        "due":"May 14th",
+        "due":"May 14th / May 21st",
         "task":"POPL Lab Eval-3(10)"
     },
 
