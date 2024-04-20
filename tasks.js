@@ -13,7 +13,7 @@ const tasks =
     },
 
     {
-        "due":"May 1st",
+        "due":"May 1st (Tentative)",
         "task":"DS Lab Eval-1(10)"
     },
     
