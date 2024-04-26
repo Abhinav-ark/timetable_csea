@@ -39,6 +39,11 @@ const tasks =
     },
 
     {
+        "due":"May 6th",
+        "task":"CS Quiz-1(10)"
+    },
+
+    {
         "due":"May 8th",
         "task":"DS Review-2(10)"
     },
@@ -66,18 +71,6 @@ const tasks =
     {
         "due":"May 17th-22nd",
         "task":"SE Review-2(20)"
-    },
+    }
 
-    
-
-    
-
-    
-
-    
-    
-    {
-        "due":"",
-        "task":"CS Quiz-1(10)"
-    },
 ]
