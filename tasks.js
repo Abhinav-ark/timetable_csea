@@ -58,7 +58,7 @@ const tasks =
     },
 
     {
-        "due":"May 17th-22nd",
+        "due":"May 16th",
         "task":"SE Review-2(20)"
     },
 
