@@ -30,7 +30,7 @@ const tasks =
     
 
     {
-        "due":"May 6th",
+        "due":"May 11th",
         "task":"CS Quiz-1(10)"
     },   
 
