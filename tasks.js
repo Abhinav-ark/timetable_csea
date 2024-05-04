@@ -57,4 +57,9 @@ const tasks =
         "task":"DS Review-2(10)"
     }
 
+    {
+        "due":"June 17th - 29th",
+        "task":"CIR Special classes"
+    }
+
 ]
