@@ -16,6 +16,11 @@ const tasks =
         "due":"May 9th",
         "task":"DS Tutorial-2(9)"
     },
+
+    {
+        "due":"May 9th 15:45 - 16:30",
+        "task":"POPL Quiz-2(5)"
+    },
     
 
     {
@@ -40,10 +45,7 @@ const tasks =
     },
     
 
-    {
-        "due":"",
-        "task":"POPL Quiz-2(5)"
-    },
+    
 
 
     
