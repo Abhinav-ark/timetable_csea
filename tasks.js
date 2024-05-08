@@ -8,11 +8,6 @@ const tasks =
     
 
     {
-        "due":"May 8th",
-        "task":"DS Lab Eval-1(10)"
-    },
-
-    {
         "due":"May 9th",
         "task":"DS Tutorial-2(9)"
     },
