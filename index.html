@@ -58,15 +58,19 @@
         }
 
         .cir {
-            background-color: rgb(243, 62, 150);
+            background-color: rgb(246, 134, 250);
         }
 
-        .pe2 {
-            background-color: rgb(150, 77, 215);
+        .pe4 {
+            background-color: rgb(120, 142, 233);
         }
 
-        .pe3 {
-            background-color: rgb(244, 146, 65);
+        .pe5 {
+            background-color: rgb(236, 162, 243);
+        }
+
+        .pe6 {
+            background-color: rgb(95, 243, 152);
         }
 
         .lab{
@@ -203,12 +207,12 @@
             }
         }
     </style>
-    <title>Timetable CSEA Sem6</title>
+    <title>Timetable CSEA Sem7</title>
 </head>
 <body>
     <div class="timetable">
     <table>
-        <thead><tr><th colspan="12">CSE A Sem 6 TimeTable</th></tr></thead>
+        <thead><tr><th colspan="12">CSE A Sem 7 TimeTable</th></tr></thead>
         <tbody>
             <tr>
                 <th class="yellow">Time/Day</th>
@@ -219,7 +223,7 @@
                 <th class="grey">Slot 4 <br> <span>10:45am - 11:35am</span> </th>
                 <th class="grey">Slot 5 <br> <span>11:35am - 12:25pm</span> </th>
                 <th class="grey">Slot 6 <br> <span>12:25pm - 1:15pm</span> </th>
-                <th class="grey">Slot 7 <br> <span>1:15pm - 2:05pm</span></th>
+                <th class="interval" rowspan="10"><p>01:15pm - 02:05pm <br> <br> Lunch Break</p></th>
                 <th class="grey">Slot 8 <br> <span>2:05pm - 2:55pm</span></th>
                 <th class="grey">Slot 9 <br> <span>2:55pm - 3:45pm</span></th>
                 <th class="grey">Slot 10 <br> <span>3:45pm - 4:35pm</span> </th>
@@ -227,65 +231,63 @@
             <tr>
                 <th class="yellow">Monday</th>
                 <td></td>
-                <td></td>
-                <td>19CSE313</td>
-                <td></td>
+                <td class="pe4">PE4</td>
+                <td class="pe5">PE5</td>
+                <td>19CSE401</td>
                 <td></td>
                 <td></td>
                 <td class="cir" colspan="3">CIR</td>
-                <td>Mentoring</td>
             </tr>
             <tr>
                 <th class="yellow">Tuesday</th>
                 <td></td>
-                <td>19CSE312</td>
-                <td>19CSE313</td>
-                <td>19CSE314</td>
-                <td class="pe2">PE2</td>
-                <td class="pe3">PE3</td>
                 <td></td>
-                <td class="lab" colspan="3">19CSE313-Lab</td>
+                <td class="pe6">PE6</td>
+                <td colspan="3">19CSE401 Lab</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <th class="yellow">Wednesday</th>
                 <td></td>
+                <td class="pe5">PE5</td>
+                <td>19CSE401</td>
+                <td>Mentoring</td>
                 <td></td>
-                <td>19CSE314</td>
-                <td>19CSE312</td>
-                <td class="pe3">PE3</td>
-                <td>19CSE311</td>
                 <td></td>
-                <td class="lab" colspan="3">19CSE312-Lab</td>
+                <td>Free Elective 2</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <th class="yellow">Thursday</th>
                 <td></td>
-                <td>19CSE311</td>
-                <td class="lab" >19CSE314 - Lab</td>
-                <td class="lab" colspan="2">19CSE314 - Lab</td>
+                <td class="pe5">PE5</td>
+                <td class="pe6">PE6</td>
                 <td></td>
-                <td>19CSE312</td>
-                <td class="pe2">PE2</td>
-                <td class="pe2">PE2</td>
-                <td class="lab">CPS - Lab</td>
+                <td></td>
+                <td></td>
+                <td class="pe4">PE4</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <th class="yellow">Friday</th>
                 <td></td>
-                <td class="pe2">PE2</td>
+                <td class="pe6">PE6</td>
                 <td></td>
-                <td>19CSE311</td>
-                <td class="pe3">PE3</td>
-                <td></td>
+                <td class="pe4">PE4</td>
                 <td></td>
                 <td></td>
+                <td>Free Elective 2</td>
                 <td></td>
                 <td></td>
             </tr>
         </tbody>
     </table>
     <br>
-    <table>
+    <!-- <table>
         <thead>
             <tr>
                 <th>19CSE311 Computer Security</th>
@@ -308,7 +310,7 @@
                 <td id="#dynamic_venue">A303</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
     </div>
     <div class="exams">
         <li style="list-style:none;"> 
@@ -326,22 +328,14 @@
                 </div>
             </a>
         </div>
-        <div class="toggle-wrapper" aria-label="midterm schedule" onclick="show_options()">
+        <!-- <div class="toggle-wrapper" aria-label="midterm schedule" onclick="show_options()">
             <div class="toggle">
                 <span class="material-symbols-outlined">
                     calendar_month
                 </span>
             </div>
-        </div>
-        <!-- <div class="toggle-wrapper" aria-label="midterm schedule">
-            <a href="./Assets/midterm.pdf">
-                <div class="toggle">
-                    <span class="material-symbols-outlined">
-                        calendar_month
-                    </span>
-                </div>
-            </a>
         </div> -->
+        
     </div>
     
     <script src="./app.js"></script>
