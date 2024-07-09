@@ -9,7 +9,7 @@
     <button id="login-button">Login with GitHub</button>
     <script>
         const clientId = 'Ov23li4y2WJIAcsEAMa8';
-        const redirectUri = 'http://localhost:5500/oauthCallback.html';
+        const redirectUri = 'https://abhinav-ark.github.io/timetable_csea/oauthCallback.html';
         const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;
 
         document.getElementById('login-button').onclick = function() {
