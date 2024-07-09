@@ -29,7 +29,7 @@
                     const data = await response.json();
                     if (data.access_token) {
                         localStorage.setItem('github_access_token', data.access_token);
-                        window.location.href = 'editor.html';
+                        window.location.href = 'editTasks.html';
                     } else {
                         alert('Authorization failed');
                     }
