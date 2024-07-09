@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+</head>
+<body>
+    <div>
+        <textarea id="editor"></textarea>
+        <button onclick="saveChanges()">Save</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script>
+        const accessToken = localStorage.getItem('github_access_token');
+
+        if (!accessToken) {
+            window.location.href = 'gitLogin.html';
+        }
+
+        const repoOwner = 'Abhinav-ark';
+        const repoName = 'timetable_csea';
+        const filePath = 'tasks.js';
+
+        async function fetchFile() {
+            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+                headers: {
+                    'Authorization': `token ${accessToken}`
+                }
+            });
+            const data = await response.json();
+            const content = atob(data.content); // Decode base64 content
+            return { content, sha: data.sha };
+        }
+
+        async function loadFile() {
+            const { content } = await fetchFile();
+            editor.setValue(content);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadFile);
+
+        const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+            lineNumbers: true,
+            mode: 'application/json',
+            theme: 'default'
+        });
+
+        async function saveChanges() {
+            const { sha } = await fetchFile();
+            const updatedContent = editor.getValue();
+            const base64Content = btoa(updatedContent); // Encode content to base64
+
+            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${accessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'Updated JSON file',
+                    content: base64Content,
+                    sha: sha
+                })
+            });
+
+            if (response.ok) {
+                alert('File updated successfully!');
+            } else {
+                alert('Failed to update file.');
+            }
+        }
+    </script>
+</body>
+</html>

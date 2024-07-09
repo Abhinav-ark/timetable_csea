@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        const hash = window.location.hash.substr(1);
+        const result = hash.split('&').reduce((res, item) => {
+            const parts = item.split('=');
+            res[parts[0]] = parts[1];
+            return res;
+        }, {});
+
+        if (result.access_token) {
+            localStorage.setItem('github_access_token', result.access_token);
+            window.location.href = 'editor.html';
+        } else {
+            alert('Authorization failed');
+        }
+    </script>
+</body>
+</html>
