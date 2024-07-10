@@ -9,7 +9,7 @@ const tasks =
     
     {
             "due":"-",
-            "task":"-"
+            "task":"--"
     },
     
 ]
