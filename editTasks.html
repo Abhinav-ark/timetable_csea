@@ -3,74 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Editor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <title>Editor</title>
 </head>
 <body>
-    <div>
-        <textarea id="editor"></textarea>
-        <button onclick="saveChanges()">Save</button>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
-    <script>
-        const accessToken = localStorage.getItem('github_access_token');
+    <h1>Editor</h1>
+    <pre id="user-info"></pre>
+    <textarea id="json-editor" cols="30" rows="10"></textarea>
+    <button id="save-button">Save</button>
 
-        if (!accessToken) {
-            window.location.href = 'gitLogin.html';
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substr(1).split('&').forEach(param => {
+                const [key, value] = param.split('=');
+                params[key] = decodeURIComponent(value);
+            });
+            return params;
         }
 
-        const repoOwner = 'Abhinav-ark';
-        const repoName = 'timetable_csea';
-        const filePath = 'tasks.js';
+        const params = getQueryParams();
+        const accessToken = params.access_token;
 
-        async function fetchFile() {
-            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+        if (accessToken) {
+            // Fetch user info as an example
+            fetch('https://api.github.com/user', {
                 headers: {
                     'Authorization': `token ${accessToken}`
                 }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-info').textContent = "Logged in as: "+data.name;
             });
-            const data = await response.json();
-            const content = atob(data.content); // Decode base64 content
-            return { content, sha: data.sha };
-        }
 
-        async function loadFile() {
-            const { content } = await fetchFile();
-            editor.setValue(content);
-        }
+            // Fetch the file to get its current SHA
+            const owner = 'Abhinav-ark';
+            const repo = 'timetable_csea';
+            const path = 'tasks.js';
 
-        document.addEventListener('DOMContentLoaded', loadFile);
-
-        const editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-            lineNumbers: true,
-            mode: 'application/json',
-            theme: 'default'
-        });
-
-        async function saveChanges() {
-            const { sha } = await fetchFile();
-            const updatedContent = editor.getValue();
-            const base64Content = btoa(updatedContent); // Encode content to base64
-
-            const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
-                method: 'PUT',
+            fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
                 headers: {
-                    'Authorization': `token ${accessToken}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    message: 'Updated JSON file',
-                    content: base64Content,
-                    sha: sha
-                })
-            });
+                    'Authorization': `token ${accessToken}`
+                }
+            })
+            .then(response => response.json())
+            .then(fileData => {
+                const sha = fileData.sha;
+                document.getElementById('json-editor').value = atob(fileData.content);
 
-            if (response.ok) {
-                alert('File updated successfully!');
-            } else {
-                alert('Failed to update file.');
-            }
+                // Save button handler
+                document.getElementById('save-button').addEventListener('click', () => {
+                    const content = document.getElementById('json-editor').value;
+                    const encodedContent = btoa(content);
+
+                    fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${accessToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: 'Updated file from editor',
+                            content: encodedContent,
+                            sha: sha // Include the SHA of the file being updated
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.content) {
+                            alert('File saved successfully');
+                        } else {
+                            alert('Error saving file');
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching file:', error);
+                alert('Error fetching file');
+            });
+        } else {
+            alert('No access token found');
         }
     </script>
 </body>

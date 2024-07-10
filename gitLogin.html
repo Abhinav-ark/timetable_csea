@@ -6,15 +6,14 @@
     <title>Login with GitHub</title>
 </head>
 <body>
+    <h1>Login with GitHub</h1>
     <button id="login-button">Login with GitHub</button>
-    <script>
-        const clientId = 'Ov23li4y2WJIAcsEAMa8';
-        const redirectUri = 'https://abhinav-ark.github.io/timetable_csea/oauthCallback.html';
-        const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;
 
-        document.getElementById('login-button').onclick = function() {
-            window.location.href = authUrl;
-        };
+    <script>
+        const backendUrl = 'http://localhost:3000';
+        document.getElementById('login-button').addEventListener('click', () => {
+            window.location.href = `${backendUrl}/login`;
+        });
     </script>
 </body>
 </html>
