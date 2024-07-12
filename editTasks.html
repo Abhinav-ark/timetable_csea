@@ -7,12 +7,76 @@
     <!-- Include CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        #user-info {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+        #json-editor {
+            height: 80vh;
+            margin: 20px 0;
+        }
+        #save-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(2, 185, 2);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #cancel-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(231, 24, 24);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 8px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .CodeMirror {
+            height: 100% !important;
+        }
+    </style>
 </head>
 <body>
-    <pre id="user-info"></pre>
-    <!-- This div will be replaced by the CodeMirror editor -->
+
+    <pre id="user-info">Logged in as: Abhinav Ramakrishnan</pre>
     <div id="json-editor"></div>
-    <button id="save-button">Save</button>
+    <div class="btn-container">
+        <button id="cancel-button">Cancel</button>
+        <button id="save-button">Save</button>
+    </div>
+    
 
     <!-- Include CodeMirror JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
@@ -27,6 +91,42 @@
             });
             return params;
         }
+
+        
+        // const content = `{
+        //     "version": "1.0.0",
+        //     "tasks": [
+        //         {
+        //             "id": 1,
+        //             "title": "Task 1",
+        //             "description": "Description of task 1",
+        //             "status": "todo"
+        //         },
+        //         {
+        //             "id": 2,
+        //             "title": "Task 2",
+        //             "description": "Description of task 2",
+        //             "status": "in-progress"
+        //         },
+        //         {
+        //             "id": 3,
+        //             "title": "Task 3",
+        //             "description": "Description of task 3",
+        //             "status": "done"
+        //         }
+        //     ]
+        // }`
+
+        const editor = CodeMirror(document.getElementById('json-editor'), {
+            value: content,
+            mode: 'javascript',
+            theme: 'material',
+            lineNumbers: true
+        });
+
+        document.getElementById('cancel-button').addEventListener('click', () => {
+            window.location.href = '/upcoming.html';
+        });
 
         const params = getQueryParams();
         const accessToken = params.access_token;
