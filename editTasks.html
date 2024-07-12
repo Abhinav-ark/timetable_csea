@@ -12,7 +12,11 @@
         #user-info {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: black;
-            font-weight: bold;
+            text-align: center;
+        }
+        b {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
             text-align: center;
         }
         #json-editor {
@@ -31,11 +35,17 @@
         #cancel-button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: rgb(231, 24, 24);
+            background-color: black;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+        #save-button:hover {
+            transform: scale(1.05);
+        }
+        #cancel-button:hover {
+            transform: scale(1.05);
         }
         ::-webkit-scrollbar {
         width: 10px;
@@ -60,9 +70,29 @@
         .btn-container {
             display: flex;
             justify-content: space-between;
-            
         }
 
+        .acc-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bubble {
+            margin-left: 10px;
+            background-color: #dbdbdb;
+            border-radius: 20px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 8px;
+            padding-right: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+        }
+        #loggedin {
+            height: fit-content;
+        }
         .CodeMirror {
             height: 100% !important;
         }
@@ -70,10 +100,13 @@
 </head>
 <body>
 
-    <pre id="user-info">Logged in as: Abhinav Ramakrishnan</pre>
+    <div class="acc-container">
+        <div id="loggedin"><b>Logged in as: </b></div>
+        <div class="bubble"><p id="user-info"></p></div>
+    </div>
     <div id="json-editor"></div>
     <div class="btn-container">
-        <button id="cancel-button">Cancel</button>
+        <button id="cancel-button">Go Back</button>
         <button id="save-button">Save</button>
     </div>
     
@@ -92,7 +125,12 @@
             return params;
         }
 
+        document.getElementById('cancel-button').addEventListener('click', () => {
+            window.location.href = '/upcoming.html';
+        });
         
+        // ----------------- Example content -----------------
+
         // const content = `{
         //     "version": "1.0.0",
         //     "tasks": [
@@ -123,10 +161,8 @@
         //     theme: 'material',
         //     lineNumbers: true
         // });
-
-        document.getElementById('cancel-button').addEventListener('click', () => {
-            window.location.href = '/upcoming.html';
-        });
+        
+        // ---------------------------------------------------
 
         const params = getQueryParams();
         const accessToken = params.access_token;
@@ -140,7 +176,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('user-info').textContent = "Logged in as: " + data.name;
+                document.getElementById('user-info').textContent = data.name;
             });
 
             // Fetch the file to get its current SHA
@@ -199,6 +235,7 @@
             });
         } else {
             alert('No access token found');
+            window.location.href = '/upcoming.html';
         }
     </script>
 </body>
