@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor</title>
+    <!-- Include CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css">
 </head>
 <body>
-    <h1>Editor</h1>
     <pre id="user-info"></pre>
-    <textarea id="json-editor" cols="30" rows="10"></textarea>
+    <!-- This div will be replaced by the CodeMirror editor -->
+    <div id="json-editor"></div>
     <button id="save-button">Save</button>
+
+    <!-- Include CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
 
     <script>
         function getQueryParams() {
@@ -33,7 +40,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('user-info').textContent = "Logged in as: "+data.name;
+                document.getElementById('user-info').textContent = "Logged in as: " + data.name;
             });
 
             // Fetch the file to get its current SHA
@@ -49,12 +56,20 @@
             .then(response => response.json())
             .then(fileData => {
                 const sha = fileData.sha;
-                document.getElementById('json-editor').value = atob(fileData.content);
+                const content = atob(fileData.content);
+
+                // Initialize CodeMirror editor
+                const editor = CodeMirror(document.getElementById('json-editor'), {
+                    value: content,
+                    mode: 'javascript',
+                    theme: 'material',
+                    lineNumbers: true
+                });
 
                 // Save button handler
                 document.getElementById('save-button').addEventListener('click', () => {
-                    const content = document.getElementById('json-editor').value;
-                    const encodedContent = btoa(content);
+                    const updatedContent = editor.getValue();
+                    const encodedContent = btoa(updatedContent);
 
                     fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
                         method: 'PUT',
