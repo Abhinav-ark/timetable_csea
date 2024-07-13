@@ -187,7 +187,14 @@
                     'Authorization': `token ${accessToken}`
                 }
             })
-            .then(response => response.json())
+            .then(response => {
+                // Redirect to login page if token is invalid
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    window.location.href = `${backendUrl}/login`;
+                }
+            })
             .then(data => {
                 document.getElementById('user-info').textContent = data.name;
             });
@@ -196,6 +203,8 @@
             const owner = 'Abhinav-ark';
             const repo = 'timetable_csea';
             const path = 'tasks.js';
+
+            const backendUrl = 'https://timetable-oauth.vercel.app';
 
             fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
                 headers: {
@@ -251,9 +260,6 @@
                 alert('Error fetching file');
             });
         } else {
-            //alert('No access token found');
-            //window.location.href = './upcoming.html';
-            const backendUrl = 'https://timetable-oauth.vercel.app';
             window.location.href = `${backendUrl}/login`;
         }
     </script>
