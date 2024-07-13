@@ -113,6 +113,35 @@
             font-size: 2rem;
         }
 
+        .table-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #login-button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 16px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #login-button:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease-in;
+        }
+
+        #github_logo{
+            margin-right: 10px;
+        }
         @media only screen and (max-width: 600px) {
             .toggle-wrapper{
                 margin: 10px;
@@ -121,19 +150,22 @@
     </style>
 </head>
 <body>
-    <div>
+    <div class="table-wrapper">
         <table>
             <thead>
+                <th>Subject</th>
                 <th>Due On</th>
                 <th>Assignment</th>
             </thead>
             <template id="task-template">
                 <tr>
+                    <td class="subject"></td>
                     <td class="date"></td>
-                    <td></td>
+                    <td class="task"></td>
                 </tr>
             </template>
         </table>
+        <button id="login-button"><img src="./Assets/github_logo.svg" height="20px" id="github_logo"/>Edit tasks</button>
     </div>
     <div class="toggle-wrapper" aria-label="upcoming tasks">
         <a href="./index.html">
@@ -150,10 +182,17 @@
         
         tasks.forEach(task => {
             let taskelement = tasktemplate.content.cloneNode(true);
+            taskelement.querySelector('.subject').innerHTML=task.subject;
             taskelement.querySelector('.date').innerHTML=task.due;
-            taskelement.querySelector('td:nth-child(2)').innerHTML=task.task;
+            taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelector('table').appendChild(taskelement);
         })
+
+        const backendUrl = 'https://timetable-oauth.vercel.app';
+        document.getElementById('login-button').addEventListener('click', () => {
+            window.location.href = `${backendUrl}/login`;
+        });
+
     </script>
 </body>
 </html>

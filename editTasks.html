@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor</title>
+    <link rel="icon" href="./timetable.png" type="image/x-icon" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./timetable.png" />
+    <title>Tasks Editor</title>
     <!-- Include CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css">
@@ -43,9 +46,11 @@
         }
         #save-button:hover {
             transform: scale(1.05);
+            transition: all 0.2s ease-in;
         }
         #cancel-button:hover {
             transform: scale(1.05);
+            transition: all 0.2s ease-in;
         }
         ::-webkit-scrollbar {
         width: 10px;
@@ -204,7 +209,9 @@
 
                 // Save button handler
                 document.getElementById('save-button').addEventListener('click', () => {
-                    const updatedContent = editor.getValue();
+                    // yes or no prompt
+                    if (confirm('Are you sure you want to save the file?')) {
+                        const updatedContent = editor.getValue();
                     const encodedContent = btoa(updatedContent);
 
                     fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
@@ -227,6 +234,8 @@
                             alert('Error saving file');
                         }
                     });
+                    }
+                    
                 });
             })
             .catch(error => {
