@@ -11,7 +11,7 @@ const tasks =
     {
             "subject":"--",
             "due":"--",
-            "task":"--"
+            "task":"---"
     },
     
 ]
