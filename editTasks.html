@@ -170,7 +170,15 @@
         // ---------------------------------------------------
 
         const params = getQueryParams();
-        const accessToken = params.access_token;
+        const params_accessToken = params.access_token;
+        const accessToken = null;
+
+        if (params_accessToken) {
+            accessToken = params_accessToken;
+            localStorage.setItem('accessToken', params_accessToken);
+        } else {
+            accessToken = localStorage.getItem('accessToken');
+        }
 
         if (accessToken) {
             // Fetch user info as an example
