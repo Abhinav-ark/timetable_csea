@@ -9,7 +9,7 @@ const tasksPE6 =
     // },
     
     {
-        "subject":"Cloud Computing",
+        "subject":"--",
         "due":"--",
         "task":"--"
     }
