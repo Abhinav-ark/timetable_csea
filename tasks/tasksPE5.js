@@ -8,11 +8,7 @@ const tasksPE5 =
     //     "task":"<task>"
     // },
     
-    {
-        "subject":"NNDL",
-        "due":"2024-07-15",
-        "task":"Test"
-    },
+   
   {
          "subject":"DLCV",
         "due":"2024-07-24",
