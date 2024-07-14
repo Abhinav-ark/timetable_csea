@@ -195,6 +195,7 @@
                 if (response.ok) {
                     return response.json();
                 } else {
+                    localStorage.removeItem('accessToken');
                     window.location.href = `${backendUrl}/login`;
                 }
             })
@@ -256,6 +257,7 @@
                             alert('File saved successfully. Please Wait for 2mins for the changes to propogate.');
                         } else {
                             alert('Error saving file');
+                            localStorage.removeItem('accessToken');
                         }
                     });
                     }
