@@ -24,6 +24,12 @@ const tasks =
         "task":"Test Lecture"
     },
     
+   { 
+     
+        "subject":"IOT",
+        "due":"2024-7-15",
+        "task":"Test lecture"
+     },
     
      
     
