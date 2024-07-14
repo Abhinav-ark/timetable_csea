@@ -196,7 +196,7 @@
                     return response.json();
                 } else {
                     localStorage.removeItem('accessToken');
-                    window.location.href = `${backendUrl}/login`;
+                    window.location.href = `${backendUrl}/login?page=${page}`;
                 }
             })
             .then(data => {
