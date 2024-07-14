@@ -13,10 +13,5 @@ const tasksPE4 =
         "due":"2024/07/15",
         "task":""
     },
-  {
-        "subject":"Ethical Hacking",
-        "due":"24-07-18",
-        "task":"EH Test2"
-    }
     
 ]
