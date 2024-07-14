@@ -9,9 +9,9 @@ const tasks =
     // },
     
     {
-        "subject":"Subject",
+        "subject":"Ethical Hacking",
         "due":"2024-07-15",
-        "task":"Task"
+        "task":"Testing Task"
     }
     
 ]
