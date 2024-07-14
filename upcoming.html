@@ -334,7 +334,7 @@
         sortedTasks.forEach(task => {
             let taskelement = tasktemplate.content.cloneNode(true);
             taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
             taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelector('table').appendChild(taskelement);
         })
@@ -349,7 +349,7 @@
         sortedTasksPE4.forEach(task => {
             let taskelement = tasktemplatepe4.content.cloneNode(true);
             taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
             taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelectorAll('table')[1].appendChild(taskelement);
         })
@@ -365,7 +365,7 @@
         sortedTasksPE5.forEach(task => {
             let taskelement = tasktemplatepe5.content.cloneNode(true);
             taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.date').innerHTML= (new Date(task.due)).toString().slice(0,10);
             taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelectorAll('table')[2].appendChild(taskelement);
         })
@@ -381,7 +381,7 @@
         sortedTasksPE6.forEach(task => {
             let taskelement = tasktemplatepe6.content.cloneNode(true);
             taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.date').innerHTML= (new Date(task.due)).toString().slice(0,10);
             taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelectorAll('table')[3].appendChild(taskelement);
         })
