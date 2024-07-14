@@ -30,6 +30,11 @@ const tasks =
         "due":"2024-7-15",
         "task":"Test lecture"
      },
+      {
+        "subject":"Ethical Hacking",
+        "due":"2024-07-15",
+        "task":"Testing Task2"
+    },
     
      
     
