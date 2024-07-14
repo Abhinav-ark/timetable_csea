@@ -12,6 +12,11 @@ const tasksPE4 =
         "subject":"RTS",
         "due":"24-07-15",
         "task":"Testing Task"
+    },
+  {
+        "subject":"Ethical Hacking",
+        "due":"24-07-18",
+        "task":"EH Test2"
     }
     
 ]
