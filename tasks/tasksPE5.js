@@ -12,6 +12,11 @@ const tasksPE5 =
         "subject":"NNDL",
         "due":"2024-07-15",
         "task":"Test"
-    }
+    },
+  {
+         "subject":"DLCV",
+        "due":"2024-07-24",
+        "task":"Eval-1"
+  }
     
 ]
