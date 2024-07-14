@@ -68,7 +68,7 @@ Google Chrome, Microsoft Edge, Brave and Opera Support PWA.
 # Motivation 
   Our classmates used to change the class whatsApp group's DP to a screenshot of the timetable to keep track of it on a regular basis. One day when I was trying to update the classgroup's DP to the new timetable, the quality of the image was unusable (text not readable) due to whatsApp's compression algorithms. I created a static HTML page of the timetable and added a manifest.json, hosted it on GitHub pages and updated it in the class group's description that evening. That simple pwa evolved into the one available today.  
 
-## Contributors
+## Maintainers
 
 - `Abhinav Ramakrishnan`
 - `Ashwin Narayanan S`
