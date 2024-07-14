@@ -9,9 +9,10 @@ const tasks =
     // },
     
     {
-        "subject":"Cloud Computing",
+        "subject":"---",
         "due":"---",
         "task":"---"
     }
     
 ]
+
