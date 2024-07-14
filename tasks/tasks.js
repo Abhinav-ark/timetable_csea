@@ -8,19 +8,11 @@ const tasks =
     //     "task":"CIR Verbal Speech"
     // },
     
-    {
-        "subject":"--",
-        "due":"2024-07-15",
-        "task":"--"
-    },
-  
-  
+   	{
+       "subject":"CIR",
+       "due":"--",
+       "task":"--"
+   	},
 
-
-
-     
-   
-
-    
 ]
 
