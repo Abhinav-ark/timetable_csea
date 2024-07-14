@@ -9,7 +9,7 @@ const tasksPE6 =
     // },
     
     {
-        "subject":"--",
+        "subject":"Information Retrival",
         "due":"--",
         "task":"--"
     }
