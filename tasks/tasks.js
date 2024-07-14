@@ -13,6 +13,11 @@ const tasks =
         "due":"2024-07-15",
         "task":"Testing Task"
     },
+  {
+        "subject":"Neural Networks and Deep Learning",
+        "due":"2024-07-15",
+        "task":"Test Lecture"
+    },
     
     
      
