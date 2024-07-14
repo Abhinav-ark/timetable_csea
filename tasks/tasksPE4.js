@@ -10,7 +10,7 @@ const tasksPE4 =
     
     {
         "subject":"RTS",
-        "due":"24-07-15",
+        "due":"24/07/15",
         "task":"Testing Task"
     },
   {
