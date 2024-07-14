@@ -9,9 +9,9 @@ const tasks =
     // },
     
     {
-        "subject":"---",
-        "due":"---",
-        "task":"---"
+        "subject":"Subject",
+        "due":"2024-07-15",
+        "task":"Task"
     }
     
 ]
