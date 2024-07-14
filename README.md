@@ -15,7 +15,7 @@
 </div>
 <img align="center" src="./Assets/img.png"/>
 
-- Simple PWA to display timetable for 6th Semester 2023-24 B Tech CSE A.
+- Simple PWA to display timetable for 7th Semester 2021-25 B Tech CSE A.
 - Built with
     - `HTML5`
     - `CSS3`
@@ -82,7 +82,9 @@ Google Chrome, Microsoft Edge, Brave and Opera Support PWA.
 # Attributions
 - `App Icon`: Calendar icons created by Freepik - Flaticon
 - `PDF Viewer`: [PDF.js](https://github.com/mozilla/pdf.js) by Mozilla Foundation Under [Apache-2.0 License](https://github.com/mozilla/pdf.js/blob/master/LICENSE)
+- `Code Editor`: [Codemirror](https://codemirror.net/) | Github : [gh/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
 
 # Licensing
 - All Code In [`./Assets/pdfjs-4.0.379-dist`](./Assets/pdfjs-4.0.379-dist) Directory is Licensed Under [Apache-2.0 License](https://github.com/mozilla/pdf.js/blob/master/LICENSE), [MOZIILA'S CODE OF CONDUCT](https://github.com/mozilla/pdf.js/blob/master/CODE_OF_CONDUCT.md)
 - All Code Except [Assets](./Assets) Directory is Licensed Under [MIT License](https://github.com/Abhinav-ark/timetable_csea/blob/main/LICENSE)
+- All Code Under [Assets/codemirror](./Assets/codemirror) Directory is Licensed Under [MIT License](https://github.com/codemirror/codemirror5)
