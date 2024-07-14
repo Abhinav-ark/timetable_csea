@@ -171,6 +171,7 @@
 
         const params = getQueryParams();
         const params_accessToken = params.access_token;
+        const page = params.page;
         let accessToken = null;
 
         const backendUrl = 'https://timetable-oauth.vercel.app';
@@ -204,7 +205,13 @@
             // Fetch the file to get its current SHA
             const owner = 'Abhinav-ark';
             const repo = 'timetable_csea';
-            const path = 'tasks.js';
+            const filename = page === 'common' ? 'tasks.js' :
+                            page === 'pe4' ? 'tasksPE4.js' :
+                            page === 'pe5' ? 'tasksPE5.js' :
+                            page === 'pe6' ? 'tasksPE6.js' :
+                            'tasks.js';
+
+            const path = `tasks/${filename}`;
 
             fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
                 headers: {

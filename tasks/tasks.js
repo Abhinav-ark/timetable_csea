@@ -4,14 +4,14 @@ const tasks =
     // Sample Task
     // {
     //     "subject":"CIR",
-    //     "due":"April 29th onwards",
+    //     "due":"YYYY-MM-DD",
     //     "task":"CIR Verbal Speech"
     // },
     
     {
-            "subject":"--",
-            "due":"--",
-            "task":"--"
-    },
+        "subject":"--",
+        "due":"--",
+        "task":"--"
+    }
     
 ]

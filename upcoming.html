@@ -10,7 +10,10 @@
     <link rel="manifest" href="./manifest.json" />
     <link rel="apple-touch-icon" href="./timetable.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="./tasks.js"></script>
+    <script src="./tasks/tasks.js"></script>
+    <script src="./tasks/tasksPE4.js"></script>
+    <script src="./tasks/tasksPE5.js"></script>
+    <script src="./tasks/tasksPE6.js"></script>
     <title>Timetable CSEA Sem6</title>
     <style>
         body {
@@ -45,6 +48,20 @@
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: small;
+        }
+
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            text-align: center;
+            font-size: 1rem;
         }
 
         .date {
@@ -145,6 +162,70 @@
         #github_logo{
             margin-right: 10px;
         }
+
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 300px;
+            text-align: center;
+            border-radius: 16px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #fileSelect {
+            width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            font-size: 16px;
+        }
+
+        #selectButton {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        #selectButton:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease-in;
+        }
+
         @media only screen and (max-width: 600px) {
             .toggle-wrapper{
                 margin: 10px;
@@ -154,6 +235,7 @@
 </head>
 <body>
     <div class="table-wrapper">
+        <h1>Common</h1>
         <table>
             <thead>
                 <th>Subject</th>
@@ -161,6 +243,51 @@
                 <th>Assignment</th>
             </thead>
             <template id="task-template">
+                <tr>
+                    <td class="subject"></td>
+                    <td class="date"></td>
+                    <td class="task"></td>
+                </tr>
+            </template>
+        </table>
+        <h1>PE4</h1>
+        <table>
+            <thead>
+                <th>Subject</th>
+                <th>Due On</th>
+                <th>Assignment</th>
+            </thead>
+            <template id="task-template-pe4">
+                <tr>
+                    <td class="subject"></td>
+                    <td class="date"></td>
+                    <td class="task"></td>
+                </tr>
+            </template>
+        </table>
+        <h1>PE5</h1>
+        <table>
+            <thead>
+                <th>Subject</th>
+                <th>Due On</th>
+                <th>Assignment</th>
+            </thead>
+            <template id="task-template-pe5">
+                <tr>
+                    <td class="subject"></td>
+                    <td class="date"></td>
+                    <td class="task"></td>
+                </tr>
+            </template>
+        </table>
+        <h1>PE6</h1>
+        <table>
+            <thead>
+                <th>Subject</th>
+                <th>Due On</th>
+                <th>Assignment</th>
+            </thead>
+            <template id="task-template-pe6">
                 <tr>
                     <td class="subject"></td>
                     <td class="date"></td>
@@ -179,23 +306,108 @@
             </div>
         </a>
     </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>What do you want to edit ?</h3>
+            <select id="fileSelect">
+                <option value="common">Common Tasks</option>
+                <option value="pe4">Tasks PE4</option>
+                <option value="pe5">Tasks PE5</option>
+                <option value="pe6">Tasks PE6</option>
+            </select>
+            <button id="selectButton">Select</button>
+        </div>
+    </div>
+
     <script> 
 
         let tasktemplate = document.getElementById("task-template");
+
+        // common
+        sortedTasks = tasks.sort((a,b) => {
+            return new Date(a.due) - new Date(b.due);
+        });
         
-        tasks.forEach(task => {
+        sortedTasks.forEach(task => {
             let taskelement = tasktemplate.content.cloneNode(true);
             taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML=task.due;
+            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
             taskelement.querySelector('.task').innerHTML=task.task;
             document.querySelector('table').appendChild(taskelement);
         })
 
-        // const backendUrl = 'https://timetable-oauth.vercel.app';
-        document.getElementById('login-button').addEventListener('click', () => {
-            // window.location.href = `${backendUrl}/login`;
-            window.location.href = './editTasks.html';
+        let tasktemplatepe4 = document.getElementById("task-template-pe4");
+
+        // pe4
+        sortedTasksPE4 = tasksPE4.sort((a,b) => {
+            return new Date(a.due) - new Date(b.due);
         });
+
+        sortedTasksPE4.forEach(task => {
+            let taskelement = tasktemplatepe4.content.cloneNode(true);
+            taskelement.querySelector('.subject').innerHTML=task.subject;
+            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.task').innerHTML=task.task;
+            document.querySelectorAll('table')[1].appendChild(taskelement);
+        })
+
+        let tasktemplatepe5 = document.getElementById("task-template-pe5");
+
+        // pe5
+
+        sortedTasksPE5 = tasksPE5.sort((a,b) => {
+            return new Date(a.due) - new Date(b.due);
+        });
+
+        sortedTasksPE5.forEach(task => {
+            let taskelement = tasktemplatepe5.content.cloneNode(true);
+            taskelement.querySelector('.subject').innerHTML=task.subject;
+            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.task').innerHTML=task.task;
+            document.querySelectorAll('table')[2].appendChild(taskelement);
+        })
+
+        let tasktemplatepe6 = document.getElementById("task-template-pe6");
+
+        // pe6
+
+        sortedTasksPE6 = tasksPE6.sort((a,b) => {
+            return new Date(a.due) - new Date(b.due);
+        });
+
+        sortedTasksPE6.forEach(task => {
+            let taskelement = tasktemplatepe6.content.cloneNode(true);
+            taskelement.querySelector('.subject').innerHTML=task.subject;
+            taskelement.querySelector('.date').innerHTML= task.due === (new Date(task.due)).toString().slice(0,10);
+            taskelement.querySelector('.task').innerHTML=task.task;
+            document.querySelectorAll('table')[3].appendChild(taskelement);
+        })
+        
+
+        // const backendUrl = 'https://timetable-oauth.vercel.app';
+        let page = 'common';
+        
+        document.getElementById('login-button').addEventListener('click', () => {
+            console.log('clicked');
+            document.getElementById('myModal').style.display = "block";
+        });
+
+        document.getElementById('selectButton').addEventListener('click', () => {
+            page = document.getElementById('fileSelect').value;
+            window.location.href = `./editTasks.html?page=${page}`;
+        });
+
+        document.getElementsByClassName("close")[0].onclick = function() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
+            }
+        }
 
     </script>
 </body>
