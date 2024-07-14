@@ -9,36 +9,18 @@ const tasks =
     // },
     
     {
-        "subject":"Ethical Hacking",
+        "subject":"--",
         "due":"2024-07-15",
-        "task":"Testing Task"
+        "task":"--"
     },
-  {
-        "subject":"Neural Networks and Deep Learning",
-        "due":"2024-07-15",
-        "task":"Test Lecture"
-    },
-    {
-        "subject":"Business Analytics ",
-        "due":"2024-07-15",
-        "task":"Test Lecture"
-    },
-    
-   { 
-     
-        "subject":"IOT",
-        "due":"2024-7-15",
-        "task":"Test lecture"
-     },
-      {
-        "subject":"Ethical Hacking",
-        "due":"2024-07-15",
-        "task":"Testing Task2"
-    },
-    
-     
-    
   
+  
+
+
+
+     
+   
+
     
 ]
 
