@@ -19,7 +19,7 @@ const tasks =
         "task":"Test Lecture"
     },
     {
-        "subject":"--",
+        "subject":"Business Analytics ",
         "due":"2024-07-15",
         "task":"Test Lecture"
     },
