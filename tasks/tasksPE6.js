@@ -17,12 +17,8 @@ const tasksPE6 =
         "subject":"BA",
         "due":"--",
         "task":"--"
-    },
-  {
-        "subject":"MAD",
-        "due":"--",
-        "task":"--"
     }
+  
   
     
 ]
