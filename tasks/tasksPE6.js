@@ -12,11 +12,6 @@ const tasksPE6 =
         "subject":"IR",
         "due":"--",
         "task":"--"
-    },
-     {
-        "subject":"BA",
-        "due":"--",
-        "task":"--"
     }
   
   
