@@ -52,6 +52,19 @@
             transform: scale(1.05);
             transition: all 0.2s ease-in;
         }
+        #use-gui {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(254, 164, 38);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #use-gui:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease-in;
+        }
         ::-webkit-scrollbar {
         width: 10px;
         }
@@ -112,6 +125,7 @@
     <div id="json-editor"></div>
     <div class="btn-container">
         <button id="cancel-button">Go Back</button>
+        <button id="use-gui">Use GUI</button>
         <button id="save-button">Save</button>
     </div>
     
@@ -132,6 +146,10 @@
 
         document.getElementById('cancel-button').addEventListener('click', () => {
             window.location.href = './upcoming.html';
+        });
+
+        document.getElementById('use-gui').addEventListener('click', () => {
+            window.location.href = `./editTasksGUI.html?page=${getQueryParams().page}`;
         });
         
         // ----------------- Example content -----------------
