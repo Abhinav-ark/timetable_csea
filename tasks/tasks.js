@@ -1,18 +1,14 @@
 const tasks = 
 [
-
-    // Sample Task
-    // {
-    //     "subject":"CIR",
-    //     "due":"YYYY-MM-DD",
-    //     "task":"CIR Verbal Speech"
-    // },
-    
-   	{
-       "subject":"CIR",
-       "due":"--",
-       "task":"--"
-   	},
-
+	{
+		"subject": "CIR",
+		"due": "--",
+		"task": "--"
+	},
+	{
+		"subject": "ComDes",
+		"due": "2024-07-19",
+		"task": "Test"
+	}
 ]
 
