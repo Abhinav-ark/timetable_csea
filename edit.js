@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 page === 'pe6' ? 'tasksPE6' :
                 'tasks';
 
-    document.getElementById('page-title').textContent = `Editing ${page}`;
+    document.getElementById('page-title').textContent = `Editing ${page} tasks`;
 
     const path = `tasks/${filename}.js`;
     let sha = '';
