@@ -20,27 +20,27 @@ document
         switch (section) {
             case 'a':
                 localStorage.setItem('section','a');
-                window.location.pathname = '/index.html';
+                window.location.href = 'index.html';
                 break;
             case 'b':
                 localStorage.setItem('section','b');
-                window.location.pathname = '/sections/cseb.html';
+                window.location.href = 'sections/cseb.html';
                 break;
             case 'c':
                 localStorage.setItem('section','c');
-                window.location.pathname = '/sections/csec.html';
+                window.location.href = 'sections/csec.html';
                 break;
             case 'd':
                 localStorage.setItem('section','d');
-                window.location.pathname = '/sections/csed.html';
+                window.location.href = 'sections/csed.html';
                 break;
             case 'e':
                 localStorage.setItem('section','e');
-                window.location.pathname = '/sections/csee.html';
+                window.location.href = 'sections/csee.html';
                 break;
             case 'f':
                 localStorage.setItem('section','f');
-                window.location.pathname = '/sections/csef.html';
+                window.location.href = 'sections/csef.html';
                 break;
             default:
                 break;
@@ -52,9 +52,9 @@ document
       const currentPath = window.location.pathname;
   
       if (section && section !== 'a') {
-          const targetPath = `/sections/cse${section}.html`;
-          if (currentPath !== targetPath) {
-              window.location.pathname = targetPath;
+          const targetPath = `sections/cse${section}.html`;
+          if (currentPath !== "/"+targetPath) {
+              window.location.href = targetPath;
           }
       }
   
