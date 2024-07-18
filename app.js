@@ -1,71 +1,68 @@
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
+  window.addEventListener("load", function() {
       navigator.serviceWorker
-        .register("./serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
+          .register("./serviceWorker.js")
+          .then(res => console.log("service worker registered"))
+          .catch(err => console.log("service worker not registered", err));
+  });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const basePath = window.location.pathname.includes('timetable_csea') ? '/timetable_csea' : '';
+  const section = localStorage.getItem('section');
+  const currentPath = window.location.pathname;
 
-document
-    .getElementById('class-form')
-    .addEventListener('submit', function (event) {
-        event.preventDefault();
+  if (section && section !== 'a') {
+      const targetPath = `${basePath}/sections/cse${section}.html`;
+      if (currentPath !== targetPath) {
+          window.location.pathname = targetPath;
+      }
+  }
 
-        console.log('submitted');
+  if (section) {
+      const classSelect = document.getElementById('class');
+      if (classSelect) {
+          classSelect.value = section;
+      }
+  }
 
-        const section = document.getElementById('class').value;
+  const classForm = document.getElementById('class-form');
+  if (classForm) {
+      classForm.addEventListener('submit', function(event) {
+          event.preventDefault();
 
-        switch (section) {
-            case 'a':
-                localStorage.setItem('section','a');
-                window.location.href = 'index.html';
-                break;
-            case 'b':
-                localStorage.setItem('section','b');
-                window.location.href = 'sections/cseb.html';
-                break;
-            case 'c':
-                localStorage.setItem('section','c');
-                window.location.href = 'sections/csec.html';
-                break;
-            case 'd':
-                localStorage.setItem('section','d');
-                window.location.href = 'sections/csed.html';
-                break;
-            case 'e':
-                localStorage.setItem('section','e');
-                window.location.href = 'sections/csee.html';
-                break;
-            case 'f':
-                localStorage.setItem('section','f');
-                window.location.href = 'sections/csef.html';
-                break;
-            default:
-                break;
-        }
-    });
+          console.log('submitted');
 
-  document.addEventListener('DOMContentLoaded', function() {
-      const section = localStorage.getItem('section');
-      const currentPath = window.location.pathname;
-  
-      if (section && section !== 'a') {
-          const targetPath = `sections/cse${section}.html`;
-          if (currentPath !== "/"+targetPath) {
-              window.location.pathname = targetPath;
+          const section = document.getElementById('class').value;
+          localStorage.setItem('section', section);
+          let redirectPath = '';
+
+          switch (section) {
+              case 'a':
+                  redirectPath = `${basePath}/index.html`;
+                  break;
+              case 'b':
+                  redirectPath = `${basePath}/sections/cseb.html`;
+                  break;
+              case 'c':
+                  redirectPath = `${basePath}/sections/csec.html`;
+                  break;
+              case 'd':
+                  redirectPath = `${basePath}/sections/csed.html`;
+                  break;
+              case 'e':
+                  redirectPath = `${basePath}/sections/csee.html`;
+                  break;
+              case 'f':
+                  redirectPath = `${basePath}/sections/csef.html`;
+                  break;
+              default:
+                  break;
           }
-      }
-  
-      if (section) {
-          document.getElementById('class').value = section;
-      }
-  });
-  
-  
 
-
-
-
-
+          if (redirectPath) {
+              window.location.href = redirectPath;
+          }
+      });
+  }
+});
