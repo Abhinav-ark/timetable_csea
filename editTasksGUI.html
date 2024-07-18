@@ -16,6 +16,7 @@
             height: fit-content;
             width: fit-content;
             max-width: 90vw;
+            margin-top: 16px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -62,6 +63,7 @@
             margin: 5% auto; 
             padding: 20px;
             border: 1px solid #888;
+            border-radius: 16px;
             width: fit-content;
             max-width: 80%; 
         }
@@ -120,7 +122,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 24px;
+            margin-bottom: 16px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -129,6 +132,9 @@
             transition: all 0.2s ease-in;
         }
         .screen {
+            position: absolute;
+            top:0;
+            left: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -189,13 +195,14 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 16px;
+            font-size: small;
         }
         .bubble {
-            margin-left: 10px;
+            margin-left: 8px;
             background-color: #dbdbdb;
             border-radius: 20px;
-            padding-top: 2px;
-            padding-bottom: 2px;
+            padding-top: 0px;
+            padding-bottom: 1px;
             padding-left: 8px;
             padding-right: 8px;
             display: flex;
@@ -203,8 +210,14 @@
             align-items: center;
             height: 20px;
         }
+        .editing {
+            top: 0;
+            width: 100vw;
+            background-color: black;
+        }
         #loggedin {
             height: fit-content;
+            color: white;
         }
 
         /* Grid layout for the form */
@@ -227,6 +240,11 @@
             padding: 10px;
             font-size: medium;
         }
+        #page-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 8px;
+        }
         * {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -234,10 +252,12 @@
 </head>
 <body>
     <div class="screen">
-        <div class="editing"><h3 id="page-title">Editing </h3></div>
-        <div class="acc-container">
-            <div id="loggedin"><b>Logged in as: </b></div>
-            <div class="bubble"><p id="user-info"></p></div>
+        <div class="editing">
+            <h3 id="page-title">Editing </h3>
+            <div class="acc-container">
+                <!-- <div id="loggedin"><b>As: </b></div> -->
+                <div class="bubble"><p id="user-info"></p></div>
+            </div>
         </div>
         <table>
             <thead>
