@@ -26,12 +26,45 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 
+  document.getElementById('class').addEventListener('change', () => {
+          const section = document.getElementById('class').value;
+          localStorage.setItem('section', section);
+          let redirectPath = '';
+
+          switch (section) {
+              case 'a':
+                  redirectPath = `${basePath}/index.html`;
+                  break;
+              case 'b':
+                  redirectPath = `${basePath}/sections/cseb.html`;
+                  break;
+              case 'c':
+                  redirectPath = `${basePath}/sections/csec.html`;
+                  break;
+              case 'd':
+                  redirectPath = `${basePath}/sections/csed.html`;
+                  break;
+              case 'e':
+                  redirectPath = `${basePath}/sections/csee.html`;
+                  break;
+              case 'f':
+                  redirectPath = `${basePath}/sections/csef.html`;
+                  break;
+              default:
+                  break;
+          }
+
+          if (redirectPath) {
+              window.location.href = redirectPath;
+          }
+  });
+
   const classForm = document.getElementById('class-form');
   if (classForm) {
       classForm.addEventListener('submit', function(event) {
           event.preventDefault();
 
-          console.log('submitted');
+          //console.log('submitted');
 
           const section = document.getElementById('class').value;
           localStorage.setItem('section', section);
