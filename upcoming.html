@@ -203,6 +203,10 @@
             cursor: pointer;
         }
 
+        #common-table {
+            display: block;
+        }
+
         #fileSelect {
             width: 100%;
             padding-left: 16px;
@@ -236,21 +240,23 @@
 </head>
 <body>
     <div class="table-wrapper">
-        <h1>Common</h1>
-        <table>
-            <thead>
-                <th>Subject</th>
-                <th>Due On</th>
-                <th>Assignment</th>
-            </thead>
-            <template id="task-template">
-                <tr>
-                    <td class="subject"></td>
-                    <td class="date"></td>
-                    <td class="task"></td>
-                </tr>
-            </template>
-        </table>
+        <div id="common-table">
+            <h1>Common</h1>
+            <table>
+                <thead>
+                    <th>Subject</th>
+                    <th>Due On</th>
+                    <th>Assignment</th>
+                </thead>
+                <template id="task-template">
+                    <tr>
+                        <td class="subject"></td>
+                        <td class="date"></td>
+                        <td class="task"></td>
+                    </tr>
+                </template>
+            </table>
+        </div>
         <h1>PE4</h1>
         <table>
             <thead>
@@ -323,6 +329,12 @@
     </div>
 
     <script> 
+
+        const section = localStorage.getItem('section');
+
+        if (section==='b'||section==='c'||section==='d'||section==='e'||section==='f'){
+            document.getElementById('common-table').style.display = 'none';
+        }
 
         let tasktemplate = document.getElementById("task-template");
 
