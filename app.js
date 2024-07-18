@@ -54,7 +54,7 @@ document
       if (section && section !== 'a') {
           const targetPath = `sections/cse${section}.html`;
           if (currentPath !== "/"+targetPath) {
-              window.location.href = targetPath;
+              window.location.pathname = targetPath;
           }
       }
   
