@@ -9,6 +9,11 @@ const tasksPE5 =
 		"subject": "TSAF",
 		"due": "2024-08-01",
 		"task": "Lab Assignment - 1"
+	},
+	{
+		"subject": "NNDL",
+		"due": "2024-07-29",
+		"task": "Tutorial - 1"
 	}
 ]
 
