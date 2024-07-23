@@ -204,6 +204,34 @@
             cursor: pointer;
         }
 
+        .black-bar {
+            top: 0px;
+            left:0px;
+            position: fixed;
+            width: 100vw;
+            background-color: black;
+            padding-bottom: 10px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-container {
+            top: 72px;
+            left: 0px;
+            width: 100vw;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 8px;
+        }
+
         #common-table {
             display: block;
         }
@@ -231,35 +259,7 @@
             transform: scale(1.05);
             transition: all 0.2s ease-in;
         }
-
-        .black-bar {
-            top: 0px;
-            left:0px;
-            position: fixed;
-            width: 100vw;
-            background-color: black;
-            padding-bottom: 10px;
-            display: block;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #page-title {
-            text-align: center;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .btn-container {
-            top: 72px;
-            left: 0px;
-            width: 100vw;
-            position: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
+        
         #all-tasks {
             padding: 4px 8px;
             font-size: 14px;
@@ -289,14 +289,14 @@
 <body>
     <main>
         <div class="black-bar">
-            <h2 id="page-title">All Tasks</h2>
+            <h2 id="page-title">Tasks for the next 7 days </h2>
         </div>
         <div class="btn-container">
-            <a href="./currentWeek.html"><button id="all-tasks">View This Week</button></a>
+            <a href="./upcoming.html"><button id="all-tasks">View All Tasks</button></a>
         </div>
 
         <div class="dummy-div"></div>
-
+        
         <div class="table-wrapper">
             <div id="common-table">
                 <h1>Common</h1>
@@ -360,7 +360,7 @@
                     </tr>
                 </template>
             </table>
-            <button id="login-button"><img src="./Assets/github_logo.svg" height="20px" id="github_logo"/>Edit tasks</button>
+            <!-- <button id="login-button"><img src="./Assets/github_logo.svg" height="20px" id="github_logo"/>Edit tasks</button> -->
         </div>
         <div class="toggle-wrapper" aria-label="upcoming tasks">
             <a href="./index.html">
@@ -372,7 +372,7 @@
             </a>
         </div>
 
-        <div id="myModal" class="modal">
+        <!-- <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>What do you want to edit ?</h3>
@@ -384,7 +384,7 @@
                 </select>
                 <button id="selectButton">Select</button>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <script> 
@@ -398,8 +398,17 @@
 
         let tasktemplate = document.getElementById("task-template");
 
+
+        const today = new Date();
+
         // common
-        sortedTasks = tasks.sort((a,b) => {
+        const sortedTasks = tasks.filter(task => {
+            const dueDate = new Date(task.due);
+            const timeDifference = dueDate - today;
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+            return daysDifference >= 0 && daysDifference <= 7;
+        })
+        .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
         
@@ -414,7 +423,13 @@
         let tasktemplatepe4 = document.getElementById("task-template-pe4");
 
         // pe4
-        sortedTasksPE4 = tasksPE4.sort((a,b) => {
+        const sortedTasksPE4 = tasksPE4.filter(task => {
+            const dueDate = new Date(task.due);
+            const timeDifference = dueDate - today;
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+            return daysDifference >= 0 && daysDifference <= 7;
+        })
+        .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
@@ -430,7 +445,13 @@
 
         // pe5
 
-        sortedTasksPE5 = tasksPE5.sort((a,b) => {
+        const sortedTasksPE5 = tasksPE5.filter(task => {
+            const dueDate = new Date(task.due);
+            const timeDifference = dueDate - today;
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+            return daysDifference >= 0 && daysDifference <= 7;
+        })
+        .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
@@ -445,8 +466,13 @@
         let tasktemplatepe6 = document.getElementById("task-template-pe6");
 
         // pe6
-
-        sortedTasksPE6 = tasksPE6.sort((a,b) => {
+        const sortedTasksPE6 = tasksPE6.filter(task => {
+            const dueDate = new Date(task.due);
+            const timeDifference = dueDate - today;
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+            return daysDifference >= 0 && daysDifference <= 7;
+        })
+        .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
