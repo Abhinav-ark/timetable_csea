@@ -20,26 +20,30 @@ const tasksPE4 =
 		"due": "2024-10-24",
 		"task": "Quiz - 2"
 	},
-    {
+	{
 		"subject": "Wireless and Mobile Communications",
 		"due": "2024-08-09",
 		"task": "Tutorial - 1"
 	},
-    {
+	{
 		"subject": "Wireless and Mobile Communications",
 		"due": "2024-08-23",
 		"task": "Quiz - 1"
 	},
-    {
+	{
 		"subject": "Wireless and Mobile Communications",
 		"due": "2024-10-10",
 		"task": "Tutorial - 2"
 	},
-    {
+	{
 		"subject": "Wireless and Mobile Communications",
 		"due": "2024-10-14",
 		"task": "Tutorial - 3"
+	},
+	{
+		"subject": "Ethical Hacking",
+		"due": "2024-08-29",
+		"task": "Quiz - 1"
 	}
-  
 ]
 
