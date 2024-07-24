@@ -406,19 +406,29 @@
             const dueDate = new Date(task.due);
             const timeDifference = dueDate - today;
             const daysDifference = timeDifference / (1000 * 3600 * 24);
-            return daysDifference >= 0 && daysDifference <= 7;
+            return daysDifference >= -1 && daysDifference <= 7;
         })
         .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
-        
-        sortedTasks.forEach(task => {
+
+        if(sortedTasks.length === 0) {
             let taskelement = tasktemplate.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
-            taskelement.querySelector('.task').innerHTML=task.task;
-            document.querySelector('table').appendChild(taskelement);
-        })
+            taskelement.querySelector('.subject').innerHTML='No Tasks';
+            taskelement.querySelector('.date').innerHTML = '--';
+            taskelement.querySelector('.task').innerHTML='--';
+            document.querySelectorAll('table')[0].appendChild(taskelement);
+        }
+        else{
+            sortedTasks.forEach(task => {
+                let taskelement = tasktemplate.content.cloneNode(true);
+                taskelement.querySelector('.subject').innerHTML=task.subject;
+                taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
+                taskelement.querySelector('.task').innerHTML=task.task;
+                document.querySelectorAll('table')[0].appendChild(taskelement);
+            })
+        }
+
 
         let tasktemplatepe4 = document.getElementById("task-template-pe4");
 
@@ -427,19 +437,28 @@
             const dueDate = new Date(task.due);
             const timeDifference = dueDate - today;
             const daysDifference = timeDifference / (1000 * 3600 * 24);
-            return daysDifference >= 0 && daysDifference <= 7;
+            return daysDifference >= -1 && daysDifference <= 7;
         })
         .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
-        sortedTasksPE4.forEach(task => {
+        if(sortedTasksPE4.length === 0) {
             let taskelement = tasktemplatepe4.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
-            taskelement.querySelector('.task').innerHTML=task.task;
+            taskelement.querySelector('.subject').innerHTML='No Tasks';
+            taskelement.querySelector('.date').innerHTML = '--';
+            taskelement.querySelector('.task').innerHTML='--';
             document.querySelectorAll('table')[1].appendChild(taskelement);
-        })
+        }
+        else {
+            sortedTasksPE4.forEach(task => {
+                let taskelement = tasktemplatepe4.content.cloneNode(true);
+                taskelement.querySelector('.subject').innerHTML=task.subject;
+                taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
+                taskelement.querySelector('.task').innerHTML=task.task;
+                document.querySelectorAll('table')[1].appendChild(taskelement);
+            })
+        }
 
         let tasktemplatepe5 = document.getElementById("task-template-pe5");
 
@@ -449,19 +468,28 @@
             const dueDate = new Date(task.due);
             const timeDifference = dueDate - today;
             const daysDifference = timeDifference / (1000 * 3600 * 24);
-            return daysDifference >= 0 && daysDifference <= 7;
+            return daysDifference >= -1 && daysDifference <= 7;
         })
         .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
-        sortedTasksPE5.forEach(task => {
+        if(sortedTasksPE5.length === 0) {
             let taskelement = tasktemplatepe5.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= (new Date(task.due)).toString().slice(0,10);
-            taskelement.querySelector('.task').innerHTML=task.task;
+            taskelement.querySelector('.subject').innerHTML='No Tasks';
+            taskelement.querySelector('.date').innerHTML = '--';
+            taskelement.querySelector('.task').innerHTML='--';
             document.querySelectorAll('table')[2].appendChild(taskelement);
-        })
+        }
+        else{
+            sortedTasksPE5.forEach(task => {
+                let taskelement = tasktemplatepe5.content.cloneNode(true);
+                taskelement.querySelector('.subject').innerHTML=task.subject;
+                taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
+                taskelement.querySelector('.task').innerHTML=task.task;
+                document.querySelectorAll('table')[2].appendChild(taskelement);
+            })            
+        }
 
         let tasktemplatepe6 = document.getElementById("task-template-pe6");
 
@@ -470,43 +498,52 @@
             const dueDate = new Date(task.due);
             const timeDifference = dueDate - today;
             const daysDifference = timeDifference / (1000 * 3600 * 24);
-            return daysDifference >= 0 && daysDifference <= 7;
+            return daysDifference >= -1 && daysDifference <= 7;
         })
         .sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
 
-        sortedTasksPE6.forEach(task => {
+        if(sortedTasksPE6.length === 0) {
             let taskelement = tasktemplatepe6.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML=task.subject;
-            taskelement.querySelector('.date').innerHTML= (new Date(task.due)).toString().slice(0,10);
-            taskelement.querySelector('.task').innerHTML=task.task;
+            taskelement.querySelector('.subject').innerHTML='No Tasks';
+            taskelement.querySelector('.date').innerHTML = '--';
+            taskelement.querySelector('.task').innerHTML='--';
             document.querySelectorAll('table')[3].appendChild(taskelement);
-        })
+        }
+        else{
+            sortedTasksPE6.forEach(task => {
+                let taskelement = tasktemplatepe6.content.cloneNode(true);
+                taskelement.querySelector('.subject').innerHTML=task.subject;
+                taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
+                taskelement.querySelector('.task').innerHTML=task.task;
+                document.querySelectorAll('table')[3].appendChild(taskelement);
+            })            
+        }
         
 
         // const backendUrl = 'https://timetable-oauth.vercel.app';
         let page = 'common';
         
-        document.getElementById('login-button').addEventListener('click', () => {
-            console.log('clicked');
-            document.getElementById('myModal').style.display = "block";
-        });
+        // document.getElementById('login-button').addEventListener('click', () => {
+        //     console.log('clicked');
+        //     document.getElementById('myModal').style.display = "block";
+        // });
 
-        document.getElementById('selectButton').addEventListener('click', () => {
-            page = document.getElementById('fileSelect').value;
-            window.location.href = `./editTasksGUI.html?page=${page}`;
-        });
+        // document.getElementById('selectButton').addEventListener('click', () => {
+        //     page = document.getElementById('fileSelect').value;
+        //     window.location.href = `./editTasksGUI.html?page=${page}`;
+        // });
 
-        document.getElementsByClassName("close")[0].onclick = function() {
-            document.getElementById('myModal').style.display = "none";
-        }
+        // document.getElementsByClassName("close")[0].onclick = function() {
+        //     document.getElementById('myModal').style.display = "none";
+        // }
 
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('myModal')) {
-                document.getElementById('myModal').style.display = "none";
-            }
-        }
+        // window.onclick = function(event) {
+        //     if (event.target == document.getElementById('myModal')) {
+        //         document.getElementById('myModal').style.display = "none";
+        //     }
+        // }
 
     </script>
 </body>
