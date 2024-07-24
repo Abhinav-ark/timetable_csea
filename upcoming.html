@@ -359,6 +359,11 @@
                         <td class="task"></td>
                     </tr>
                 </template>
+                <template id="no-tasks-template">
+                    <tr>
+                        <td colspan="3"> <b> No Tasks </b> </td>
+                    </tr>
+                </template>
             </table>
             <button id="login-button"><img src="./Assets/github_logo.svg" height="20px" id="github_logo"/>Edit tasks</button>
         </div>
@@ -398,16 +403,15 @@
 
         let tasktemplate = document.getElementById("task-template");
 
+        let notaskstemplate = document.getElementById("no-tasks-template");
+
         // common
         sortedTasks = tasks.sort((a,b) => {
             return new Date(a.due) - new Date(b.due);
         });
         
         if(sortedTasks.length === 0) {
-            let taskelement = tasktemplate.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML='No Tasks';
-            taskelement.querySelector('.date').innerHTML = '--';
-            taskelement.querySelector('.task').innerHTML='--';
+            let taskelement = notaskstemplate.content.cloneNode(true);
             document.querySelectorAll('table')[0].appendChild(taskelement);
         }
         else {
@@ -428,10 +432,7 @@
         });
 
         if(sortedTasksPE4.length === 0) {
-            let taskelement = tasktemplatepe4.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML='No Tasks';
-            taskelement.querySelector('.date').innerHTML = '--';
-            taskelement.querySelector('.task').innerHTML='--';
+            let taskelement = notaskstemplate.content.cloneNode(true);
             document.querySelectorAll('table')[1].appendChild(taskelement);
         }
         else{
@@ -454,10 +455,7 @@
         });
 
         if(sortedTasksPE5.length === 0) {
-            let taskelement = tasktemplatepe5.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML='No Tasks';
-            taskelement.querySelector('.date').innerHTML = '--';
-            taskelement.querySelector('.task').innerHTML='--';
+            let taskelement = notaskstemplate.content.cloneNode(true);
             document.querySelectorAll('table')[2].appendChild(taskelement);
         }
         else{
@@ -479,10 +477,7 @@
         });
 
         if(sortedTasksPE6.length === 0) {
-            let taskelement = tasktemplatepe6.content.cloneNode(true);
-            taskelement.querySelector('.subject').innerHTML='No Tasks';
-            taskelement.querySelector('.date').innerHTML = '--';
-            taskelement.querySelector('.task').innerHTML='--';
+            let taskelement = notaskstemplate.content.cloneNode(true);
             document.querySelectorAll('table')[3].appendChild(taskelement);
         }
         else{
