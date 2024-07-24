@@ -34,6 +34,36 @@ const tasksPE6 =
 		"subject": "MAD",
 		"due": "2024-10-22",
 		"task": "Lab Eval - 4"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-08-20",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-08-27",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-09-11",
+		"task": "CS Review - 1"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-10-07",
+		"task": "Lab Eval - 2"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-10-25",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "BA",
+		"due": "2024-10-28",
+		"task": "CS Review - 2"
 	}
 ]
 
