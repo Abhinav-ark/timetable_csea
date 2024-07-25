@@ -187,108 +187,127 @@
         
         // ---------------------------------------------------
 
-        const params = getQueryParams();
-        const params_accessToken = params.access_token;
-        const page = params.page;
-        let accessToken = null;
+       
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = getQueryParams();
+            const params_accessToken = params.access_token;
+            const page = params.page;
+            let accessToken = null;
+            let sha;
+            let content;
+            let editor;
 
-        const backendUrl = 'https://timetable-oauth.vercel.app';
+            const backendUrl = 'https://timetable-oauth.vercel.app';
 
-        if (params_accessToken) {
-            accessToken = params_accessToken;
-            localStorage.setItem('accessToken', params_accessToken);
-        } else {
-            accessToken = localStorage.getItem('accessToken');
-        }
+            if (params_accessToken) {
+                accessToken = params_accessToken;
+                localStorage.setItem('accessToken', params_accessToken);
+            } else {
+                accessToken = localStorage.getItem('accessToken');
+            }
 
-        if (accessToken) {
-            // Fetch user info as an example
-            fetch('https://api.github.com/user', {
-                headers: {
-                    'Authorization': `token ${accessToken}`
-                }
-            })
-            .then(response => {
-                // Redirect to login page if token is invalid
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    localStorage.removeItem('accessToken');
-                    window.location.href = `${backendUrl}/login?page=${page}`;
-                }
-            })
-            .then(data => {
-                document.getElementById('user-info').textContent = data.name;
-            });
-
-            // Fetch the file to get its current SHA
-            const owner = 'Abhinav-ark';
-            const repo = 'timetable_csea';
-            const filename = page === 'common' ? 'tasks.js' :
-                            page === 'pe4' ? 'tasksPE4.js' :
-                            page === 'pe5' ? 'tasksPE5.js' :
-                            page === 'pe6' ? 'tasksPE6.js' :
-                            'tasks.js';
-
-            const path = `tasks/${filename}`;
-
-            fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-                headers: {
-                    'Authorization': `token ${accessToken}`
-                }
-            })
-            .then(response => response.json())
-            .then(fileData => {
-                const sha = fileData.sha;
-                const content = atob(fileData.content);
-
-                // Initialize CodeMirror editor
-                const editor = CodeMirror(document.getElementById('json-editor'), {
-                    value: content,
-                    mode: 'javascript',
-                    theme: 'material',
-                    lineNumbers: true
+            if (accessToken) {
+                // Fetch user info as an example
+                fetch('https://api.github.com/user', {
+                    headers: {
+                        'Authorization': `token ${accessToken}`
+                    }
+                })
+                .then(response => {
+                    // Redirect to login page if token is invalid
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        localStorage.removeItem('accessToken');
+                        window.location.href = `${backendUrl}/login?page=${page}`;
+                    }
+                })
+                .then(data => {
+                    document.getElementById('user-info').textContent = data.name;
                 });
+
+                // Fetch the file to get its current SHA
+                const owner = 'Abhinav-ark';
+                const repo = 'timetable_csea';
+                const filename = page === 'common' ? 'tasks.js' :
+                                page === 'pe4' ? 'tasksPE4.js' :
+                                page === 'pe5' ? 'tasksPE5.js' :
+                                page === 'pe6' ? 'tasksPE6.js' :
+                                'tasks.js';
+
+                const path = `tasks/${filename}`;
 
                 // Save button handler
                 document.getElementById('save-button').addEventListener('click', () => {
                     // yes or no prompt
                     if (confirm('Are you sure you want to save the file?')) {
                         const updatedContent = editor.getValue();
-                    const encodedContent = btoa(updatedContent);
+                        const encodedContent = btoa(updatedContent);
 
-                    fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Authorization': `token ${accessToken}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            message: 'Updated file from editor',
-                            content: encodedContent,
-                            sha: sha // Include the SHA of the file being updated
+                        fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Authorization': `token ${accessToken}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                message: 'Updated file from editor',
+                                content: encodedContent,
+                                sha: sha // Include the SHA of the file being updated
+                            })
                         })
+                        .then(response => response.json())
+                        .then(async (data) => {
+                            if (data.content) {
+                                alert('File saved successfully. Please wait for 2 minutes for the changes to propagate.');
+                                await fetchFile();
+                            } else {
+                                alert('Error saving file');
+                                await fetchFile();
+                                localStorage.removeItem('accessToken');
+                            }
+                        });
+                    }
+                });
+
+                const fetchFile = async () => {
+                    await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+                        headers: {
+                            'Authorization': `token ${accessToken}`
+                        }
                     })
                     .then(response => response.json())
-                    .then(data => {
-                        if (data.content) {
-                            alert('File saved successfully. Please Wait for 2mins for the changes to propogate.');
+                    .then(fileData => {
+                        sha = fileData.sha;
+                        content = atob(fileData.content);
+
+                        // Check if editor is already initialized
+                        if (!editor) {
+                            // Initialize CodeMirror editor
+                            editor = CodeMirror(document.getElementById('json-editor'), {
+                                value: content,
+                                mode: 'javascript',
+                                theme: 'material',
+                                lineNumbers: true
+                            });
                         } else {
-                            alert('Error saving file');
-                            localStorage.removeItem('accessToken');
+                            // Update the content of the existing editor
+                            editor.setValue(content);
                         }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching file:', error);
+                        alert('Error fetching file');
                     });
-                    }
-                    
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching file:', error);
-                alert('Error fetching file');
-            });
-        } else {
-            window.location.href = `${backendUrl}/login?page=${page}`;
-        }
+                }
+
+                await fetchFile();
+            } else {
+                window.location.href = `${backendUrl}/login?page=${page}`;
+            }
+        });
+
+        
     </script>
 </body>
 </html>

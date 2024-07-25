@@ -32,7 +32,8 @@ document.getElementById('cancel-button').addEventListener('click', () => {
     window.location.href = './upcoming.html';
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', async function () {
     const taskForm = document.getElementById('taskForm');
     const taskTableBody = document.getElementById('taskTableBody');
     const taskModal = document.getElementById('taskModal');
@@ -90,24 +91,28 @@ document.addEventListener('DOMContentLoaded', function () {
     let sha = '';
     let tasksVar = [];
 
-    fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
-        headers: {
-            'Authorization': `token ${accessToken}`
-        }
-    })
-    .then(response => response.json())
-    .then(fileData => {
-        const content = atob(fileData.content);
-        sha = fileData.sha;
-        const jsonString = removeFinalComma(removeNewLines(removeComments(content.split('=')[1])));
-        tasksVar = JSON.parse(jsonString);
-        rendertasks();
-        //localStorage.setItem('tasksVar', JSON.stringify(tasksVar));
-    })
-    .catch(error => {
-        console.error('Error fetching file:', error);
-        alert('Error fetching file');
-    });
+    const fetchTasks = async () => {
+        await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+            headers: {
+                'Authorization': `token ${accessToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(fileData => {
+            const content = atob(fileData.content);
+            sha = fileData.sha;
+            const jsonString = removeFinalComma(removeNewLines(removeComments(content.split('=')[1])));
+            tasksVar = JSON.parse(jsonString);
+            rendertasks();
+            //localStorage.setItem('tasksVar', JSON.stringify(tasksVar));
+        })
+        .catch(error => {
+            console.error('Error fetching file:', error);
+            alert('Error fetching file');
+        });
+    };
+
+    await fetchTasks();
 
     // let tasksVar = page === 'common' ? tasks :
     //             page === 'pe4' ? tasksPE4 :
@@ -233,11 +238,13 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
         .then(response => response.json())
-        .then(data => {
+        .then(async (data) => {
             if (data.content) {
                 alert('File saved successfully. Please Wait for 2mins for the changes to propogate.');
+                await fetchTasks();
             } else {
                 alert('Error saving file');
+                await fetchTasks();
                 localStorage.removeItem('accessToken');
             }
         });

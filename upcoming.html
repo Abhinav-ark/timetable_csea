@@ -270,6 +270,12 @@
             cursor: pointer;
         }
 
+        .over {
+            background-color: rgb(196, 196, 196);
+            color: rgb(115, 115, 115);
+            text-decoration: line-through;
+        }
+
         #all-tasks:hover {
             transform: scale(1.05);
             transition: all 0.2s ease-in;
@@ -307,7 +313,7 @@
                         <th>Assignment</th>
                     </thead>
                     <template id="task-template">
-                        <tr>
+                        <tr class="row">
                             <td class="subject"></td>
                             <td class="date"></td>
                             <td class="task"></td>
@@ -323,7 +329,7 @@
                     <th>Assignment</th>
                 </thead>
                 <template id="task-template-pe4">
-                    <tr>
+                    <tr class="row">
                         <td class="subject"></td>
                         <td class="date"></td>
                         <td class="task"></td>
@@ -338,7 +344,7 @@
                     <th>Assignment</th>
                 </thead>
                 <template id="task-template-pe5">
-                    <tr>
+                    <tr class="row">
                         <td class="subject"></td>
                         <td class="date"></td>
                         <td class="task"></td>
@@ -353,7 +359,7 @@
                     <th>Assignment</th>
                 </thead>
                 <template id="task-template-pe6">
-                    <tr>
+                    <tr class="row">
                         <td class="subject"></td>
                         <td class="date"></td>
                         <td class="task"></td>
@@ -420,6 +426,15 @@
                 taskelement.querySelector('.subject').innerHTML=task.subject;
                 taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
                 taskelement.querySelector('.task').innerHTML=task.task;
+
+                let dueDate = new Date(task.due);
+                let today = new Date();
+                today.setHours(0, 0, 0, 0); 
+
+                if (dueDate < today) {
+                    taskelement.querySelector('.row').classList.add('over');
+                }
+
                 document.querySelectorAll('table')[0].appendChild(taskelement);
             })
         }
@@ -441,6 +456,16 @@
                 taskelement.querySelector('.subject').innerHTML=task.subject;
                 taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
                 taskelement.querySelector('.task').innerHTML=task.task;
+
+                let dueDate = new Date(task.due);
+                let today = new Date();
+                today.setHours(0, 0, 0, 0); 
+
+                if (dueDate < today) {
+                    taskelement.querySelector('.row').classList.add('over');
+                }
+
+
                 document.querySelectorAll('table')[1].appendChild(taskelement);
             })            
         }
@@ -464,6 +489,16 @@
                 taskelement.querySelector('.subject').innerHTML=task.subject;
                 taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
                 taskelement.querySelector('.task').innerHTML=task.task;
+
+                let dueDate = new Date(task.due);
+                let today = new Date();
+                today.setHours(0, 0, 0, 0); 
+
+                if (dueDate < today) {
+                    taskelement.querySelector('.row').classList.add('over');
+                }
+
+
                 document.querySelectorAll('table')[2].appendChild(taskelement);
             })            
         }
@@ -486,6 +521,15 @@
                 taskelement.querySelector('.subject').innerHTML=task.subject;
                 taskelement.querySelector('.date').innerHTML = (new Date(task.due)).toString().slice(0,10);
                 taskelement.querySelector('.task').innerHTML=task.task;
+
+                let dueDate = new Date(task.due);
+                let today = new Date();
+                today.setHours(0, 0, 0, 0); 
+
+                if (dueDate < today) {
+                    taskelement.querySelector('.row').classList.add('over');
+                }
+
                 document.querySelectorAll('table')[3].appendChild(taskelement);
             })            
         }
