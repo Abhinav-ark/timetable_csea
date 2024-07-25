@@ -24,6 +24,11 @@ const tasks =
 		"subject": "CD",
 		"due": "2024-11-05",
 		"task": "Quiz -3"
+	},
+	{
+		"subject": "NewTask",
+		"due": "2024-07-25",
+		"task": "Test"
 	}
 ]
 
