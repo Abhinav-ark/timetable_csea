@@ -79,6 +79,36 @@ const tasksPE6 =
 		"subject": "PR",
 		"due": "2024-10-29",
 		"task": "CS Review"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-01",
+		"task": "CS Review - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-12",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-28",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-10-01",
+		"task": "Lab Eval - 2"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-10-26",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-11-04",
+		"task": "CS Review - 2"
 	}
 ]
 
