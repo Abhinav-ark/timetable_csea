@@ -29,6 +29,36 @@ const tasksPE5 =
 		"subject": "MANET",
 		"due": "2024-10-30",
 		"task": "CS Review"
+	},
+	{
+		"subject": "TSAF",
+		"due": "2024-08-24",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "TSAF",
+		"due": "2024-08-29",
+		"task": "Lab Eval -1"
+	},
+	{
+		"subject": "TSAF",
+		"due": "2024-10-10",
+		"task": "Quiz -2"
+	},
+	{
+		"subject": "TSAF",
+		"due": "2024-10-24",
+		"task": "Lab Eval -2"
+	},
+	{
+		"subject": "DLCV",
+		"due": "2024-08-14",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "DLCV",
+		"due": "2024-08-22",
+		"task": "Quiz - 1"
 	}
 ]
 
