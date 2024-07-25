@@ -23,7 +23,7 @@ const tasks =
 	{
 		"subject": "CD",
 		"due": "2024-11-05",
-		"task": "Quiz - 3"
+		"task": "Quiz - 4"
 	}
 ]
 
