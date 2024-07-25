@@ -21,27 +21,27 @@ const tasksPE4 =
 		"task": "Quiz - 2"
 	},
 	{
-		"subject": "Wireless and Mobile Communications",
+		"subject": "WMC",
 		"due": "2024-08-09",
 		"task": "Tutorial - 1"
 	},
 	{
-		"subject": "Wireless and Mobile Communications",
+		"subject": "WMC",
 		"due": "2024-08-23",
 		"task": "Quiz - 1"
 	},
 	{
-		"subject": "Wireless and Mobile Communications",
+		"subject": "WMC",
 		"due": "2024-10-10",
 		"task": "Tutorial - 2"
 	},
 	{
-		"subject": "Wireless and Mobile Communications",
+		"subject": "WMC",
 		"due": "2024-10-14",
 		"task": "Tutorial - 3"
 	},
 	{
-		"subject": "Ethical Hacking",
+		"subject": "EH",
 		"due": "2024-08-29",
 		"task": "Quiz - 1"
 	},
@@ -49,6 +49,16 @@ const tasksPE4 =
 		"subject": "CGV",
 		"due": "2024-08-09",
 		"task": "Quiz - 1"
+	},
+	{
+		"subject": "CGV",
+		"due": "2024-08-22",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "CGV",
+		"due": "2024-09-23",
+		"task": "Quiz - 2"
 	}
 ]
 
