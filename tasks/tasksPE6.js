@@ -64,6 +64,21 @@ const tasksPE6 =
 		"subject": "BA",
 		"due": "2024-10-28",
 		"task": "CS Review - 2"
+	},
+	{
+		"subject": "PR",
+		"due": "2024-08-29",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "PR",
+		"due": "2024-10-25",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "PR",
+		"due": "2024-10-29",
+		"task": "CS Review"
 	}
 ]
 
