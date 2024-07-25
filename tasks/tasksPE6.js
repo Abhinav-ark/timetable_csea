@@ -109,6 +109,26 @@ const tasksPE6 =
 		"subject": "NLP",
 		"due": "2024-11-04",
 		"task": "CS Review - 2"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-08-20",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-08-30",
+		"task": "Assignment"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-10-21",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-10-30",
+		"task": "Case Study"
 	}
 ]
 
