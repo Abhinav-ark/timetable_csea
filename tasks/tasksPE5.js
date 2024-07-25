@@ -59,6 +59,21 @@ const tasksPE5 =
 		"subject": "DLCV",
 		"due": "2024-08-22",
 		"task": "Quiz - 1"
+	},
+    {
+		"subject": "DLCV",
+		"due": "2024-10-04",
+		"task": "Lab Eval - 2"
+	},
+    {
+		"subject": "DLCV",
+		"due": "2024-10-21",
+		"task": "Quiz - 2"
+	},
+    {
+		"subject": "DLCV",
+		"due": "2024-10-28",
+		"task": "CS Review Start"
 	}
 ]
 
