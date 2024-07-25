@@ -79,6 +79,76 @@ const tasksPE6 =
 		"subject": "PR",
 		"due": "2024-10-29",
 		"task": "CS Review"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-01",
+		"task": "CS Review - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-12",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-28",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-10-01",
+		"task": "Lab Eval - 2"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-10-26",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-11-04",
+		"task": "CS Review - 2"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-08-20",
+		"task": "Quiz - 1"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-08-30",
+		"task": "Assignment"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-10-21",
+		"task": "Quiz - 2"
+	},
+	{
+		"subject": "AAA",
+		"due": "2024-10-30",
+		"task": "Case Study"
+	},
+	{
+		"subject": "IR",
+		"due": "2024-08-27",
+		"task": "Lab Eval - 1"
+	},
+	{
+		"subject": "IR",
+		"due": "2024-09-26",
+		"task": "Tutorial - 2"
+	},
+	{
+		"subject": "IR",
+		"due": "2024-10-08",
+		"task": "Lab Eval - 2"
+	},
+	{
+		"subject": "IR",
+		"due": "2024-10-22",
+		"task": "Lab Eval - 3"
 	}
 ]
 
