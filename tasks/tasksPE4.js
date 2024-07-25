@@ -59,6 +59,18 @@ const tasksPE4 =
 		"subject": "CGV",
 		"due": "2024-09-23",
 		"task": "Quiz - 2"
+	},
+    
+    {
+		"subject": "CGV",
+		"due": "2024-10-24",
+		"task": "Lab Eval - 2"
+	},
+  
+    {
+		"subject": "CGV",
+		"due": "2024-10-28",
+		"task": "CS Review Start"
 	}
 ]
 
