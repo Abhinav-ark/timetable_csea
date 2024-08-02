@@ -149,6 +149,11 @@ const tasksPE6 =
 		"subject": "IR",
 		"due": "2024-10-22",
 		"task": "Lab Eval - 3"
+	},
+	{
+		"subject": "NLP",
+		"due": "2024-08-13",
+		"task": "Case Study review "
 	}
 ]
 
