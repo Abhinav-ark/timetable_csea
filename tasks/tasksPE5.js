@@ -11,11 +11,6 @@ const tasksPE5 =
 		"task": "Lab Assignment - 1"
 	},
 	{
-		"subject": "NNDL",
-		"due": "2024-07-29",
-		"task": "Tutorial - 1"
-	},
-	{
 		"subject": "MANET",
 		"due": "2024-08-02",
 		"task": "Quiz - 1"
@@ -94,6 +89,11 @@ const tasksPE5 =
 		"subject": "NNDL",
 		"due": "2024-10-24",
 		"task": "Project Eval Start"
+	},
+	{
+		"subject": "NNDL",
+		"due": "2024-08-10",
+		"task": "Tutorial-1"
 	}
 ]
 
