@@ -7,11 +7,6 @@ const tasksPE6 =
 	},
 	{
 		"subject": "MAD",
-		"due": "2024-07-25",
-		"task": "Quiz - 1"
-	},
-	{
-		"subject": "MAD",
 		"due": "2024-08-06",
 		"task": "Lab Eval - 1"
 	},
