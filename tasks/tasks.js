@@ -2,7 +2,7 @@ const tasks =
 [
 	{
 		"subject": "CD",
-		"due": "2024-08-27",
+		"due": "2024-08-20",
 		"task": "Lab Eval -1 "
 	},
 	{
