@@ -72,7 +72,7 @@ const tasksPE5 =
 	},
 	{
 		"subject": "NNDL",
-		"due": "2024-08-14",
+		"due": "2024-08-28",
 		"task": "Lab Eval - 1"
 	},
 	{
