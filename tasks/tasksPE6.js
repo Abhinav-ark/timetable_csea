@@ -87,7 +87,7 @@ const tasksPE6 =
 	},
 	{
 		"subject": "NLP",
-		"due": "2024-08-28",
+		"due": "2024-08-31",
 		"task": "Quiz - 1"
 	},
 	{
