@@ -47,7 +47,7 @@ const tasksPE4 =
 	},
 	{
 		"subject": "CGV",
-		"due": "2024-08-09",
+		"due": "2024-08-30",
 		"task": "Quiz - 1"
 	},
 	{
