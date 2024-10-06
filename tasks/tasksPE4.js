@@ -97,7 +97,7 @@ const tasksPE4 =
 	},
 	{
 		"subject": "EH",
-		"due": "2024-09-16",
+		"due": "2024-10-09",
 		"task": "CS Eval - 1"
 	},
 	{
@@ -107,7 +107,7 @@ const tasksPE4 =
 	},
 	{
 		"subject": "EH",
-		"due": "2024-10-14",
+		"due": "2024-10-24",
 		"task": "CS Eval - 2"
 	}
 ]
