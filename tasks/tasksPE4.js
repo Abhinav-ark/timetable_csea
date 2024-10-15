@@ -1,25 +1,18 @@
 const tasksPE4 = 
 [
+	
 	{
 		"subject": "RTS",
-		"due": "2024-07-31",
-		"task": "Lab Eval - 1"
-	},
-	{
-		"subject": "RTS",
-		"due": "2024-08-23",
+		"due": "2024-10-21",
 		"task": "Lab Eval - 2"
 	},
 	{
 		"subject": "RTS",
-		"due": "2024-10-10",
-		"task": "Quiz -1"
+		"due": "2024-10-28 onwards",
+		"task": "CS Review"
 	},
-	{
-		"subject": "RTS",
-		"due": "2024-10-24",
-		"task": "Quiz - 2"
-	},
+	
+	
 	{
 		"subject": "WMC",
 		"due": "2024-08-09",
