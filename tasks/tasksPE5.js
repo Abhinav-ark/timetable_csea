@@ -5,11 +5,7 @@ const tasksPE5 =
 		"due": "2024-07-24",
 		"task": "Eval-1"
 	},
-	{
-		"subject": "TSAF",
-		"due": "2024-08-01",
-		"task": "Lab Assignment - 1"
-	},
+	
 	{
 		"subject": "MANET",
 		"due": "2024-08-02",
@@ -27,24 +23,23 @@ const tasksPE5 =
 	},
 	{
 		"subject": "TSAF",
-		"due": "2024-08-21",
-		"task": "Quiz - 1"
+		"due": "2024-10-21",
+		"task": "Lab Assignment-2"
 	},
+
 	{
 		"subject": "TSAF",
-		"due": "2024-08-29",
-		"task": "Lab Eval -1"
-	},
-	{
-		"subject": "TSAF",
-		"due": "2024-10-10",
+		"due": "2024-10-23",
 		"task": "Quiz -2"
 	},
+	
 	{
 		"subject": "TSAF",
-		"due": "2024-10-24",
-		"task": "Lab Eval -2"
+		"due": "2024-10-25",
+		"task": "Lab Eval"
 	},
+	
+	
 	{
 		"subject": "DLCV",
 		"due": "2024-08-14",
