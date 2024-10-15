@@ -21,11 +21,7 @@ const tasksPE5 =
 		"due": "2024-10-30",
 		"task": "CS Review"
 	},
-	{
-		"subject": "TSAF",
-		"due": "2024-10-21",
-		"task": "Lab Assignment-2"
-	},
+	
 
 	{
 		"subject": "TSAF",
@@ -37,6 +33,11 @@ const tasksPE5 =
 		"subject": "TSAF",
 		"due": "2024-10-25",
 		"task": "Lab Eval"
+	},
+	{
+		"subject": "TSAF",
+		"due": "2024-10-28",
+		"task": "Lab Assignment-2"
 	},
 	
 	
