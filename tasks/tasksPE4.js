@@ -8,7 +8,7 @@ const tasksPE4 =
 	},
 	{
 		"subject": "RTS",
-		"due": "2024-10-28 onwards",
+		"due": "2024-10-28",
 		"task": "CS Review"
 	},
 	
