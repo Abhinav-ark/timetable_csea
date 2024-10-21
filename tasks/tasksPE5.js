@@ -31,7 +31,7 @@ const tasksPE5 =
 	
 	{
 		"subject": "TSAF",
-		"due": "2024-10-25",
+		"due": "2024-10-26",
 		"task": "Lab Eval"
 	},
 	{
