@@ -1,0 +1,51 @@
+{
+        "title": "Sem 7 TimeTable - CSE C",
+        "schedule": [
+        [
+            "",
+            {"text": "PE4", "class": "pe4"},
+            {"text": "PE5", "class": "pe5"},
+            "",
+            "19CSE401",
+            "",
+            {"text": "CIR", "class": "cir", "colspan": 3}
+        ],
+        [
+            "",
+            {"text": "PE6", "class": "pe6", "colspan": 2},
+            "Occupied by M.Tech",
+            "Occupied by M.Tech",
+            "",
+            "", "", ""
+        ],
+        [
+            "",
+            {"text": "PE5", "class": "pe5", "colspan": 2},
+            {"text": "19CSE401 Lab", "colspan": 3},
+            "Free Elective 2",
+            "NNDL Lab",
+            "NNDL"
+        ],
+        [
+            "",
+            {"text": "PE5", "class": "pe5"},
+            {"text": "PE6", "class": "pe6"},
+            "Occupied by MTECH",
+            "",
+            "Mentoring",
+            {"text": "PE4", "class": "pe4", "colspan": 2},
+            ""
+        ],
+        [
+            "",
+            {"text": "PE6", "class": "pe6"},
+            "19CSE401",
+            {"text": "PE4", "class": "pe4"},
+            "",
+            "",
+            "Free Elective 2",
+            "",
+            ""
+        ]
+        ]
+    }
