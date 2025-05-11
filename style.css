@@ -1,0 +1,237 @@
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            max-height: 100%;
+            margin: 0;
+        }
+
+        table {
+            max-width: 90vw;
+            border-collapse: collapse;
+            margin: 10;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        thead {
+            background-color: rgb(54, 213, 78);
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+        }
+
+        span {
+            font-weight: 500;
+        }
+
+        .yellow {
+            background-color: rgb(255, 238, 0);
+        }
+
+        .interval {
+            background-color: rgb(68, 152, 255);   
+        }
+
+        .interval p {
+            width: 100%;
+        }
+
+        .grey {
+            background-color: rgb(236, 234, 234);
+        }
+
+        .cir {
+            background-color: rgb(246, 134, 250);
+        }
+
+        .pe4 {
+            background-color: rgb(120, 142, 233);
+        }
+
+        .pe5 {
+            background-color: rgb(236, 162, 243);
+        }
+
+        .pe6 {
+            background-color: rgb(95, 243, 152);
+        }
+
+        .lab{
+            background-color: antiquewhite;
+        }
+        .toggle-wrapper a{
+            text-decoration:none;
+            display: grid;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle {
+            /* border: 1px solid green; */
+            display: grid;
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 5px;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle span{
+            /* border: 1px solid blue; */
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: fit-content;
+            height: fit-content;
+        }
+        .toggle-wrapper a :active{
+            text-decoration:none;
+        }
+        .toggle-wrapper a :visited{
+            text-decoration:none;
+        }
+        .toggle-wrapper a :hover{
+            text-decoration:none;
+        }
+
+        .toggle-wrapper{
+            background-color: black;
+            /* border: 1px solid red; */
+            display: grid;
+            border-radius: 10px;
+            padding: 5px;
+            width: fit-content;
+            height: fit-content;
+            max-height: 3rem;
+            max-width: 3rem;
+            margin-right: 10px;
+        }
+        .toggle-wrapper :hover{
+            transform: scale(1.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .linkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .exams {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            margin-bottom: 70px;
+            border: 1px solid black;
+            border-radius: 20px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 200 ease-in-out;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .exams a {
+            text-decoration: none;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-weight: bold;
+        }
+
+        .exams ul {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .exams ul :hover {
+            background-color: rgb(255, 238, 0);
+            color: black;
+            border-radius: 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .exams a :active{
+            text-decoration:none;
+        }
+        .exams a :visited{
+            text-decoration:none;
+        }
+        .exams a :hover{
+            text-decoration:none;
+            transform: scale(1.1);
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .choose-class {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 16px;
+            position: fixed;
+            bottom: 0;
+            z-index: 100;
+            padding: 8px 16px;
+            border-radius: 24px;
+            border: 0.1px solid rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
+            /*backdrop-filter: blur(1px);*/
+        }
+
+        #select-button {
+            padding: 4px 8px;
+            margin-left: 10px;
+            border-radius: 16px;
+            background-color: rgb(54, 213, 78);
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        #select-button:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease-in;
+        }
+
+        #class {
+            padding: 2px;
+            border-radius: 16px;
+            /* width: 96px; */
+            border: 1px solid black;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .timetable {
+                transform: rotate(-90deg) scale(0.8);
+            }
+            .linkbox{
+                margin: 10px;
+            }
+            .toggle-wrapper{
+                margin-right: 5px;
+            }
+        }
