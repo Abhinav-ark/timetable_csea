@@ -7,184 +7,133 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const basePath = window.location.pathname.includes('timetable_csea') ? '/timetable_csea' : '';
-//   const section = localStorage.getItem('section');
-//   const currentPath = window.location.pathname;
-
-//   if (section && section !== 'a') {
-//       const targetPath = `${basePath}/sections/cse${section}.html`;
-//       if (currentPath !== targetPath) {
-//           window.location.pathname = targetPath;
-//       }
-//   }
-
-//   if (section) {
-//       const classSelect = document.getElementById('class');
-//       if (classSelect) {
-//           classSelect.value = section;
-//       }
-//   }
-
-//   document.getElementById('class').addEventListener('change', () => {
-//           const section = document.getElementById('class').value;
-//           localStorage.setItem('section', section);
-//           let redirectPath = '';
-
-//           switch (section) {
-//               case 'a':
-//                   redirectPath = `${basePath}/index.html`;
-//                   break;
-//               case 'b':
-//                   redirectPath = `${basePath}/sections/cseb.html`;
-//                   break;
-//               case 'c':
-//                   redirectPath = `${basePath}/sections/csec.html`;
-//                   break;
-//               case 'd':
-//                   redirectPath = `${basePath}/sections/csed.html`;
-//                   break;
-//               case 'e':
-//                   redirectPath = `${basePath}/sections/csee.html`;
-//                   break;
-//               case 'f':
-//                   redirectPath = `${basePath}/sections/csef.html`;
-//                   break;
-//               default:
-//                   break;
-//           }
-
-//           if (redirectPath) {
-//               window.location.href = redirectPath;
-//           }
-//   });
-
-//   const classForm = document.getElementById('class-form');
-//   if (classForm) {
-//       classForm.addEventListener('submit', function(event) {
-//           event.preventDefault();
-
-//           //console.log('submitted');
-
-//           const section = document.getElementById('class').value;
-//           localStorage.setItem('section', section);
-//           let redirectPath = '';
-
-//           switch (section) {
-//               case 'a':
-//                   redirectPath = `${basePath}/index.html`;
-//                   break;
-//               case 'b':
-//                   redirectPath = `${basePath}/sections/cseb.html`;
-//                   break;
-//               case 'c':
-//                   redirectPath = `${basePath}/sections/csec.html`;
-//                   break;
-//               case 'd':
-//                   redirectPath = `${basePath}/sections/csed.html`;
-//                   break;
-//               case 'e':
-//                   redirectPath = `${basePath}/sections/csee.html`;
-//                   break;
-//               case 'f':
-//                   redirectPath = `${basePath}/sections/csef.html`;
-//                   break;
-//               default:
-//                   break;
-//           }
-
-//           if (redirectPath) {
-//               window.location.href = redirectPath;
-//           }
-//       });
-//   }
-// });
 document.addEventListener('DOMContentLoaded', function() {
   const basePath = window.location.pathname.includes('timetable_csea') ? '/timetable_csea' : '';
-  const classSelect = document.getElementById('class');
-  const section = localStorage.getItem('section') || 'a';
   
-  // Set initial section
+  // Get section from URL query parameter or localStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  const sectionFromUrl = urlParams.get('section');
+  let section = sectionFromUrl || localStorage.getItem('section') || 'a';
+  
+  // Update localStorage with current section
+  localStorage.setItem('section', section);
+  
+  const classSelect = document.getElementById('class');
+  
+  // Set initial section in dropdown
   if (classSelect) {
-      classSelect.value = section;
-      renderTimetable(section);
+    classSelect.value = section;
+    renderTimetable(section);
   }
 
   // Handle form submission
   const classForm = document.getElementById('class-form');
   if (classForm) {
-      classForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          const newSection = classSelect.value;
-          localStorage.setItem('section', newSection);
-          renderTimetable(newSection);
-      });
+    classForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const newSection = classSelect.value;
+      updateSection(newSection);
+    });
   }
 
   // Handle direct select change
-  classSelect.addEventListener('change', () => {
+  if (classSelect) {
+    classSelect.addEventListener('change', () => {
       const newSection = classSelect.value;
-      localStorage.setItem('section', newSection);
-      renderTimetable(newSection);
-  });
+      updateSection(newSection);
+    });
+  }
+  
+  function updateSection(newSection) {
+    localStorage.setItem('section', newSection);
+    
+    // Update URL with the new section parameter
+    const url = new URL(window.location);
+    url.searchParams.set('section', newSection);
+    window.history.pushState({}, '', url);
+    
+    renderTimetable(newSection);
+  }
 
   function renderTimetable(section) {
-      // Construct the path based on the section
-      const jsonPath = `${basePath}/sections/cse${section}.json`;
-      
-      fetch(jsonPath)
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.json();
-          })
-          .then(sectionData => {
-              buildTableCells(sectionData);
-              // Update URL without page reload
-              const newUrl = section === 'a' 
-                  ? `${basePath}/index.html` 
-                  : `${basePath}/sections/cse${section}.html`;
-              window.history.pushState({}, '', newUrl);
-              console.log('Timetable loaded successfully for section:', section);
-          })
-          .catch(error => {
-              console.error('Error loading timetable:', error);
-              console.log('Failed path:', jsonPath);
-              document.querySelector('thead tr th').textContent = 'Error loading timetable';
-          });
+    // Construct the path based on the section
+    const jsonPath = `${basePath}/sections/cse${section}.json`;
+    
+    fetch(jsonPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(sectionData => {
+        buildTableCells(sectionData);
+        console.log('Timetable loaded successfully for section:', section);
+      })
+      .catch(error => {
+        console.error('Error loading timetable:', error);
+        console.log('Failed path:', jsonPath);
+        const tableHeader = document.querySelector('thead tr th');
+        if (tableHeader) {
+          tableHeader.textContent = 'Error loading timetable';
+        }
+      });
   }
 
   function buildTableCells(sectionData) {
-      if (!sectionData) return;
+    if (!sectionData) return;
 
-      // Update title
-      document.querySelector('thead tr th').textContent = sectionData.title;
+    const titleElement = document.querySelector('thead tr th');
+    if (titleElement) {
+      titleElement.textContent = sectionData.title;
+    }
+    
+    const tbody = document.querySelector('table tbody');
+    if (!tbody) return;
+    
+    const dayRows = tbody.querySelectorAll('tr:not(:first-child)');
+    
+    // Create rows for each day
+    dayRows.forEach((row, index) => {
+      row.querySelectorAll('td').forEach(td => td.remove());
       
-      const tbody = document.querySelector('table tbody');
-      const dayRows = tbody.querySelectorAll('tr:not(:first-child)');
+      const daySchedule = sectionData.schedule[index];
       
-      // Create rows for each day
-      dayRows.forEach((row, index) => {
-          // Clear existing td elements
-          row.querySelectorAll('td').forEach(td => td.remove());
-          
-          const daySchedule = sectionData.schedule[index];
-          
-          // Fill in schedule data
-          daySchedule.forEach((cellData) => {
-              const cell = document.createElement('td');
-              
-              if (typeof cellData === 'object') {
-                  if (cellData.class) cell.classList.add(cellData.class);
-                  if (cellData.colspan) cell.setAttribute('colspan', cellData.colspan);
-                  cell.textContent = cellData.text || '';
-              } else {
-                  cell.textContent = cellData;
-              }
-              
-              row.appendChild(cell);
-          });
+      // Fill in schedule data
+      daySchedule.forEach((cellData) => {
+        const cell = document.createElement('td');
+        
+        if (typeof cellData === 'object') {
+          if (cellData.class) cell.classList.add(cellData.class);
+          if (cellData.colspan) cell.setAttribute('colspan', cellData.colspan);
+          cell.textContent = cellData.text || '';
+        } else {
+          cell.textContent = cellData;
+        }
+        
+        row.appendChild(cell);
       });
+    });
   }
+
+  // Update links to maintain section parameter
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('index.html') ||
+        link.href.includes('midsem.html') || 
+        link.href.includes('endsem.html') || 
+        link.href.includes('tasks.html')) {
+      
+      link.addEventListener('click', function(e) {
+        // Only intercept internal links
+        if (link.origin === window.location.origin) {
+          e.preventDefault();
+          
+          const targetUrl = new URL(link.href);
+          // Preserve the current section in the new URL
+          targetUrl.searchParams.set('section', section);
+          window.location.href = targetUrl.toString();
+        }
+      });
+    }
+  });
 });
